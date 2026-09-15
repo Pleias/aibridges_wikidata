@@ -1,0 +1,160 @@
+{
+  "id": "PST_AUDIT_MULTILINGUAL_CONFLICT_001",
+  "design_card": "PST_AUDIT_MULTILINGUAL_CONFLICT",
+  "question": "Work only in the provided graph. Audit every work recorded as having been filmed in Berlin. Which works have descriptions in different languages that assign incompatible production or release years? Ignore cases where one description merely gives a start year while another gives the full run of a television series. Return the complete anomaly set and every exact year-bearing description needed to show each conflict.",
+  "taxonomy": {
+    "category": "cross_lingual",
+    "type": "pst_audit_multilingual_conflict"
+  },
+  "allowed_functions": [
+    "search_entity",
+    "search_property",
+    "edges",
+    "descriptions",
+    "name",
+    "has"
+  ],
+  "limits": {
+    "turns": 15
+  },
+  "answer": {
+    "schema": "canonical",
+    "format": "Call FINAL with exactly this JSON and no prose: {\"reviewed\":N,\"anomalies\":[{\"qid\":\"Q...\",\"name\":\"...\",\"evidence\":[{\"language\":\"xx\",\"text\":\"exact stored description\"}]}],\"count\":N}. Include all year-bearing descriptions for each anomaly; sort evidence by language and anomalies by numeric QID.",
+    "expected": {
+      "reviewed": 245,
+      "anomalies": [
+        {
+          "qid": "Q5890",
+          "name": "V for Vendetta",
+          "evidence": [
+            {
+              "language": "de",
+              "text": "Film von James McTeigue (2005)"
+            },
+            {
+              "language": "en",
+              "text": "2005 film directed by James McTeigue"
+            },
+            {
+              "language": "fr",
+              "text": "film de James McTeigue, sorti en 2005"
+            },
+            {
+              "language": "ru",
+              "text": "британский фильм 2005 (2006) года"
+            },
+            {
+              "language": "zh",
+              "text": "2006年電影"
+            }
+          ]
+        },
+        {
+          "qid": "Q29600",
+          "name": "Aimée & Jaguar",
+          "evidence": [
+            {
+              "language": "ar",
+              "text": "فيلم أنتج عام 1998"
+            },
+            {
+              "language": "de",
+              "text": "Film von Max Färberböck (1999)"
+            },
+            {
+              "language": "en",
+              "text": "1998 film by Max Färberböck"
+            },
+            {
+              "language": "fr",
+              "text": "film sorti en 1999"
+            }
+          ]
+        },
+        {
+          "qid": "Q540624",
+          "name": "Germany, Year Zero",
+          "evidence": [
+            {
+              "language": "ar",
+              "text": "فيلم أُصدر سنة 1948، من إخراج روبرتو روسيليني"
+            },
+            {
+              "language": "de",
+              "text": "Film von Roberto Rossellini (1948)"
+            },
+            {
+              "language": "en",
+              "text": "1948 film by Roberto Rossellini"
+            },
+            {
+              "language": "fr",
+              "text": "film de Roberto Rossellini, sorti en 1948"
+            },
+            {
+              "language": "ru",
+              "text": "фильм военной трилогии Р. Росселлини, 1947"
+            }
+          ]
+        },
+        {
+          "qid": "Q28791094",
+          "name": "Berlin Rebel High School",
+          "evidence": [
+            {
+              "language": "ar",
+              "text": "فيلم أنتج عام 2017"
+            },
+            {
+              "language": "de",
+              "text": "deutscher Dokumentarfilm von Alexander Kleider aus dem Jahr 2016"
+            },
+            {
+              "language": "en",
+              "text": "2016 film by Alexander Kleider"
+            },
+            {
+              "language": "fr",
+              "text": "film d'Alexander Kleider, sorti en 2016"
+            }
+          ]
+        },
+        {
+          "qid": "Q39071379",
+          "name": "Unexpected",
+          "evidence": [
+            {
+              "language": "de",
+              "text": "Film von Rainer Kaufmann (2015)"
+            },
+            {
+              "language": "en",
+              "text": "2014 film directed by Rainer Kaufmann"
+            }
+          ]
+        },
+        {
+          "qid": "Q112175481",
+          "name": "Red Cunt, Reconsidering Periods",
+          "evidence": [
+            {
+              "language": "de",
+              "text": "Film von Toti Baches (2004)"
+            },
+            {
+              "language": "en",
+              "text": "2022 film directed by Toti Baches"
+            }
+          ]
+        }
+      ],
+      "count": 6
+    },
+    "bookkeeping": [
+      "reviewed"
+    ]
+  },
+  "qids": [
+    "Q64"
+  ]
+}

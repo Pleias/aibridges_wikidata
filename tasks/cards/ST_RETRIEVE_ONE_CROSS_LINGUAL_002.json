@@ -1,0 +1,32 @@
+{
+  "id": "ST_RETRIEVE_ONE_CROSS_LINGUAL_002",
+  "design_card": "ST_RETRIEVE_ONE_CROSS_LINGUAL",
+  "question": "Work only in the provided graph. Where and on what exact date was the 2019 Arab League summit held? Return the city, the date in ISO format, and the complete original evidence.",
+  "taxonomy": {
+    "category": "cross_lingual",
+    "type": "st_retrieve_one_cross_lingual"
+  },
+  "allowed_functions": [
+    "search_entity",
+    "descriptions",
+    "name",
+    "has"
+  ],
+  "limits": {
+    "turns": 8
+  },
+  "answer": {
+    "schema": "canonical",
+    "format": "Call FINAL with exactly this JSON and no prose: {\"entity\":{\"qid\":\"Q...\",\"name\":\"...\"},\"city\":\"...\",\"date\":\"YYYY-MM-DD\",\"language\":\"xx\",\"evidence\":\"exact stored description\"}.",
+    "expected": {
+      "entity": {
+        "qid": "Q62604500",
+        "name": "2019 Arab League summit"
+      },
+      "city": "Tunis",
+      "date": "2019-03-31",
+      "language": "ar",
+      "evidence": "قمة عربية عاديّة عُقدت في تونس يوم 31 آذار/مارس 2019"
+    }
+  }
+}

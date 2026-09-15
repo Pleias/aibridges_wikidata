@@ -1,0 +1,208 @@
+{
+  "id": "LT_RETRIEVE_ALL_INTERSECTION_VOLUME_003",
+  "design_card": "LT_RETRIEVE_ALL_INTERSECTION_VOLUME",
+  "question": "Work only in the provided graph. Which molecular targets are recorded as regulated by both hsa-let-7a-5p and hsa-miR-1-3p? Return the complete set and its exact count.",
+  "taxonomy": {
+    "category": "multi_hop",
+    "type": "lt_retrieve_all_intersection_volume"
+  },
+  "allowed_functions": [
+    "search_entity",
+    "search_property",
+    "edges",
+    "name",
+    "has"
+  ],
+  "limits": {
+    "turns": 8
+  },
+  "answer": {
+    "schema": "canonical",
+    "format": "Call FINAL with exactly this JSON and no prose: {\"items\":[{\"qid\":\"Q...\",\"name\":\"...\"}],\"count\":N}. Sort items by numeric QID.",
+    "expected": {
+      "items": [
+        {
+          "qid": "Q14865236",
+          "name": "IL6"
+        },
+        {
+          "qid": "Q14865314",
+          "name": "COX1"
+        },
+        {
+          "qid": "Q14865565",
+          "name": "EGFR"
+        },
+        {
+          "qid": "Q14888082",
+          "name": "SP1"
+        },
+        {
+          "qid": "Q14906367",
+          "name": "THBS1"
+        },
+        {
+          "qid": "Q14912139",
+          "name": "ITGA3"
+        },
+        {
+          "qid": "Q15311861",
+          "name": "CCND1"
+        },
+        {
+          "qid": "Q17709256",
+          "name": "ACTA1"
+        },
+        {
+          "qid": "Q17709262",
+          "name": "ACTB"
+        },
+        {
+          "qid": "Q17834526",
+          "name": "ATP6V1B2"
+        },
+        {
+          "qid": "Q17862014",
+          "name": "AP1S1"
+        },
+        {
+          "qid": "Q18023132",
+          "name": "EDN1"
+        },
+        {
+          "qid": "Q18026262",
+          "name": "GNG5"
+        },
+        {
+          "qid": "Q18029261",
+          "name": "MPL"
+        },
+        {
+          "qid": "Q18029551",
+          "name": "ND1"
+        },
+        {
+          "qid": "Q18030579",
+          "name": "PLAGL2"
+        },
+        {
+          "qid": "Q18030720",
+          "name": "PPP2R2A"
+        },
+        {
+          "qid": "Q18031097",
+          "name": "RFC2"
+        },
+        {
+          "qid": "Q18031326",
+          "name": "RRM1"
+        },
+        {
+          "qid": "Q18032410",
+          "name": "YWHAZ"
+        },
+        {
+          "qid": "Q18033801",
+          "name": "CLDN12"
+        },
+        {
+          "qid": "Q18034081",
+          "name": "ZNF264"
+        },
+        {
+          "qid": "Q18036168",
+          "name": "RABL2B"
+        },
+        {
+          "qid": "Q18036169",
+          "name": "RABL2A"
+        },
+        {
+          "qid": "Q18036510",
+          "name": "COPZ1"
+        },
+        {
+          "qid": "Q18036543",
+          "name": "FNDC3A"
+        },
+        {
+          "qid": "Q18037200",
+          "name": "CBX5"
+        },
+        {
+          "qid": "Q18037479",
+          "name": "CD2AP"
+        },
+        {
+          "qid": "Q18037931",
+          "name": "ANKRD17"
+        },
+        {
+          "qid": "Q18038279",
+          "name": "AGO1"
+        },
+        {
+          "qid": "Q18039632",
+          "name": "UHRF1"
+        },
+        {
+          "qid": "Q18041684",
+          "name": "UBA6"
+        },
+        {
+          "qid": "Q18041979",
+          "name": "IPO9"
+        },
+        {
+          "qid": "Q18045072",
+          "name": "SNX6"
+        },
+        {
+          "qid": "Q18048006",
+          "name": "ZCCHC3"
+        },
+        {
+          "qid": "Q18048397",
+          "name": "ZNF799"
+        },
+        {
+          "qid": "Q18048447",
+          "name": "FMNL3"
+        },
+        {
+          "qid": "Q18048787",
+          "name": "PAXBP1"
+        },
+        {
+          "qid": "Q18050911",
+          "name": "BRI3BP"
+        },
+        {
+          "qid": "Q18053230",
+          "name": "PDE12"
+        },
+        {
+          "qid": "Q18053452",
+          "name": "SLC16A9"
+        },
+        {
+          "qid": "Q18054566",
+          "name": "RIMOC1"
+        },
+        {
+          "qid": "Q18056698",
+          "name": "RBM12B"
+        },
+        {
+          "qid": "Q18248414",
+          "name": "COIL"
+        }
+      ],
+      "count": 44
+    }
+  },
+  "qids": [
+    "Q27593175",
+    "Q27593879"
+  ]
+}

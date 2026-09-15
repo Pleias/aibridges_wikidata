@@ -1,0 +1,71 @@
+{
+  "id": "PST_RETRIEVE_ALL_SEMANTIC_FILTER_002",
+  "question": "Work only in the provided graph. Which people linked to the American public broadcaster PBS as their employer are described as producers or filmmakers? Return the complete set, not a sample, together with the wording that supports every inclusion.",
+  "taxonomy": {
+    "category": "semantic",
+    "type": "pst_retrieve_all_semantic_filter"
+  },
+  "allowed_functions": [
+    "search_entity",
+    "search_property",
+    "backlinks",
+    "edges",
+    "descriptions",
+    "labels",
+    "name",
+    "has"
+  ],
+  "limits": {
+    "turns": 15
+  },
+  "answer": {
+    "schema": "canonical",
+    "format": "Call FINAL with exactly this JSON and no prose: {\"network\":\"Q...\",\"reviewed\":N,\"matches\":[{\"qid\":\"Q...\",\"evidence\":\"exact stored description\"}]}",
+    "expected": {
+      "network": "Q215616",
+      "reviewed": 45,
+      "matches": [
+        {
+          "qid": "Q5180707",
+          "evidence": "American television producer (1932–2006)"
+        },
+        {
+          "qid": "Q50410244",
+          "evidence": "American producer and correspondent associated with the MacNeil Lehrer News Hour and the PBS Newshour"
+        },
+        {
+          "qid": "Q87818393",
+          "evidence": "journalist, producer"
+        },
+        {
+          "qid": "Q93498853",
+          "evidence": "American television executive and producer (1934-2020)"
+        },
+        {
+          "qid": "Q98737477",
+          "evidence": "American television producer and educator"
+        },
+        {
+          "qid": "Q104665889",
+          "evidence": "American filmmaker and conservationist"
+        },
+        {
+          "qid": "Q105305717",
+          "evidence": "documentary producer"
+        },
+        {
+          "qid": "Q111311118",
+          "evidence": "American television producer"
+        },
+        {
+          "qid": "Q136773897",
+          "evidence": "American producer and director"
+        }
+      ]
+    },
+    "bookkeeping": [
+      "reviewed"
+    ]
+  },
+  "design_card": "PST_RETRIEVE_ALL_SEMANTIC_FILTER"
+}

@@ -1,0 +1,85 @@
+{
+  "id": "PST_RETRIEVE_ALL_SEMANTIC_FILTER_007",
+  "design_card": "PST_RETRIEVE_ALL_SEMANTIC_FILTER",
+  "question": "Work only in the provided graph. Among every person directly linked to FC Barcelona itself by the member-of-sports-team relation, rather than to one of its sections, who is described as a politician? Return the complete set, not a sample, and quote the exact description that establishes the political role for every inclusion.",
+  "taxonomy": {
+    "category": "semantic",
+    "type": "pst_retrieve_all_semantic_filter"
+  },
+  "allowed_functions": [
+    "search_entity",
+    "search_property",
+    "edges",
+    "backlinks",
+    "descriptions",
+    "name",
+    "has"
+  ],
+  "limits": {
+    "turns": 12
+  },
+  "answer": {
+    "schema": "canonical",
+    "format": "Call FINAL with exactly this JSON and no prose: {\"pool_size\":0,\"count\":0,\"entities\":[{\"qid\":\"Q...\",\"name\":\"...\",\"language\":\"xx\",\"evidence\":\"exact stored description\"}]} with entities sorted by numeric QID.",
+    "expected": {
+      "pool_size": 1443,
+      "count": 8,
+      "entities": [
+        {
+          "qid": "Q178649",
+          "name": "Romário",
+          "language": "en",
+          "evidence": "Brazilian footballer and politician"
+        },
+        {
+          "qid": "Q311611",
+          "name": "Joan Laporta",
+          "language": "en",
+          "evidence": "Catalan politician and president of FC Barcelona"
+        },
+        {
+          "qid": "Q550019",
+          "name": "Roberto Dinamite",
+          "language": "en",
+          "evidence": "Brazilian footballer, politician (1954–2023)"
+        },
+        {
+          "qid": "Q1357324",
+          "name": "Ernst-Alfred Thalmann",
+          "language": "fr",
+          "evidence": "avocat, homme politique et footballeur suisse"
+        },
+        {
+          "qid": "Q2311356",
+          "name": "Tomás Reñones Crego",
+          "language": "de",
+          "evidence": "spanischer Politiker"
+        },
+        {
+          "qid": "Q6148645",
+          "name": "Tomás Soley Güell",
+          "language": "en",
+          "evidence": "Costa Rican politician and economist (1875-1943)"
+        },
+        {
+          "qid": "Q114030867",
+          "name": "Óscar Albalat",
+          "language": "en",
+          "evidence": "Spanish athlete and politician"
+        },
+        {
+          "qid": "Q114856951",
+          "name": "Shu'aib Kabir",
+          "language": "en",
+          "evidence": "politician"
+        }
+      ]
+    },
+    "bookkeeping": [
+      "pool_size"
+    ]
+  },
+  "qids": [
+    "Q7156"
+  ]
+}

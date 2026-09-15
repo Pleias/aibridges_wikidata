@@ -1,0 +1,13 @@
+# Harness, graph environment and scorers (Python 3.13).
+# The same lower bounds as pyproject.toml; uv.lock pins the tested versions.
+# vLLM is installed separately on the serving machine (docs/04-setup.md).
+datasets>=5.0.1
+numpy>=2.5.1
+openai>=2.53.0
+orjson>=3.11.9
+pyarrow>=25.0.0
+requests>=2.34.2
+sentence-transformers>=5.7.0
+tantivy>=0.26.0
+tenacity>=9.1.4
+huggingface_hub

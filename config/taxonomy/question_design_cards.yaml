@@ -1,0 +1,135 @@
+version: 1
+
+# These cards define experimental needs before selecting concrete Wikidata
+# examples. A card is only a candidate until its data realization, gold answer,
+# and claimed difficulty have been verified.
+#
+# They are coverage targets, not prompt templates. Concrete relations,
+# semantic evidence, decisive languages and wording are inferred from the data
+# and stored in the task certificate. They must not leak into the question.
+cards:
+  - id: LT_RETRIEVE_ALL_INTERSECTION_VOLUME
+    execution_target: {pattern: LT}
+    objective: {type: retrieve, coverage: all}
+    candidate_set: {operation: intersection}
+    modifiers: {volume: high, cross_lingual: false, obscurity: medium}
+    difficulty_sources: [volume, exhaustive_coverage, logical_composition]
+
+  - id: LT_RETRIEVE_ALL_DIFFERENCE_OBSCURE
+    execution_target: {pattern: LT}
+    objective: {type: retrieve, coverage: all}
+    candidate_set: {operation: difference}
+    modifiers: {volume: medium, cross_lingual: false, obscurity: high}
+    difficulty_sources: [obscurity, exhaustive_coverage]
+
+  - id: LT_AUDIT_CONFLICT_POOL_VOLUME
+    execution_target: {pattern: LT}
+    objective: {type: audit, operation: conflict, coverage: all}
+    candidate_set: {operation: pool}
+    modifiers: {volume: high, cross_lingual: false, obscurity: medium}
+    difficulty_sources: [volume, exhaustive_coverage]
+
+  - id: LT_AGGREGATE_RANK_POOL_VOLUME
+    execution_target: {pattern: LT}
+    objective: {type: aggregate, operation: rank}
+    candidate_set: {operation: pool}
+    modifiers: {volume: high, cross_lingual: false, obscurity: medium}
+    difficulty_sources: [volume, exhaustive_coverage, logical_composition]
+
+  - id: ST_RETRIEVE_ONE_DISAMBIGUATION
+    execution_target: {pattern: ST}
+    objective: {type: retrieve, coverage: one}
+    candidate_set: {operation: pool}
+    modifiers: {volume: low, cross_lingual: false, obscurity: high}
+    difficulty_sources: [semantic_dependency, obscurity]
+
+  - id: ST_RETRIEVE_ONE_TEXTUAL_FACT
+    execution_target: {pattern: ST}
+    objective: {type: retrieve, coverage: one}
+    candidate_set: {operation: pool}
+    modifiers: {volume: low, cross_lingual: false, obscurity: high}
+    difficulty_sources: [semantic_dependency, obscurity]
+
+  - id: ST_RETRIEVE_ONE_CROSS_LINGUAL
+    execution_target: {pattern: ST}
+    objective: {type: retrieve, coverage: one}
+    candidate_set: {operation: pool}
+    modifiers: {volume: low, cross_lingual: true, obscurity: high}
+    difficulty_sources: [semantic_dependency, cross_lingual, obscurity]
+
+  - id: SST_RETRIEVE_ONE_RESOLVE_THEN_INSPECT
+    execution_target: {pattern: SST}
+    objective: {type: retrieve, coverage: one}
+    candidate_set: {operation: pool}
+    modifiers: {volume: low, cross_lingual: false, obscurity: high}
+    difficulty_sources: [sequential_semantic_dependency, obscurity]
+
+  - id: SST_RETRIEVE_ONE_ROLE_GATED
+    execution_target: {pattern: SST}
+    objective: {type: retrieve, coverage: one}
+    candidate_set: {operation: pool}
+    modifiers: {volume: medium, cross_lingual: false, obscurity: medium}
+    difficulty_sources: [sequential_semantic_dependency]
+
+  - id: SST_RETRIEVE_ONE_CROSS_LANGUAGE_RELAY
+    execution_target: {pattern: SST}
+    objective: {type: retrieve, coverage: one}
+    candidate_set: {operation: pool}
+    modifiers: {volume: low, cross_lingual: true, obscurity: high}
+    difficulty_sources: [sequential_semantic_dependency, cross_lingual, obscurity]
+
+  - id: SST_AUDIT_SOURCE_DRILLDOWN
+    execution_target: {pattern: SST}
+    objective: {type: audit, operation: conflict, coverage: all}
+    candidate_set: {operation: pool}
+    modifiers: {volume: medium, cross_lingual: false, obscurity: high}
+    difficulty_sources: [sequential_semantic_dependency, obscurity]
+
+  - id: PST_RETRIEVE_ALL_SEMANTIC_FILTER
+    execution_target: {pattern: PST}
+    objective: {type: retrieve, coverage: all}
+    candidate_set: {operation: pool}
+    modifiers: {volume: high, cross_lingual: false, obscurity: high}
+    difficulty_sources: [parallel_semantic_workload, volume, obscurity, exhaustive_coverage]
+
+  - id: PST_RETRIEVE_ALL_INTERSECTION_FILTER
+    execution_target: {pattern: PST}
+    objective: {type: retrieve, coverage: all}
+    candidate_set: {operation: intersection}
+    modifiers: {volume: high, cross_lingual: false, obscurity: medium}
+    difficulty_sources: [parallel_semantic_workload, volume, logical_composition, exhaustive_coverage]
+
+  - id: PST_AGGREGATE_COMPARE_HUBS
+    execution_target: {pattern: PST}
+    objective: {type: aggregate, operation: extreme}
+    candidate_set: {operation: pool}
+    modifiers: {volume: high, cross_lingual: false, obscurity: high}
+    difficulty_sources: [parallel_semantic_workload, volume, obscurity, exhaustive_coverage]
+
+  - id: PST_AGGREGATE_COUNT_CROSS_LINGUAL
+    execution_target: {pattern: PST}
+    objective: {type: aggregate, operation: count}
+    candidate_set: {operation: pool}
+    modifiers: {volume: high, cross_lingual: true, obscurity: high}
+    difficulty_sources: [parallel_semantic_workload, volume, cross_lingual, obscurity, exhaustive_coverage]
+
+  - id: PST_AGGREGATE_PARTITION
+    execution_target: {pattern: PST}
+    objective: {type: aggregate, operation: group}
+    candidate_set: {operation: pool}
+    modifiers: {volume: high, cross_lingual: false, obscurity: medium}
+    difficulty_sources: [parallel_semantic_workload, volume, exhaustive_coverage]
+
+  - id: PST_AUDIT_MULTILINGUAL_CONFLICT
+    execution_target: {pattern: PST}
+    objective: {type: audit, operation: conflict, coverage: all}
+    candidate_set: {operation: pool}
+    modifiers: {volume: medium, cross_lingual: true, obscurity: high}
+    difficulty_sources: [parallel_semantic_workload, cross_lingual, obscurity, exhaustive_coverage]
+
+  - id: PST_AUDIT_MISSING_FACT
+    execution_target: {pattern: PST}
+    objective: {type: audit, operation: missing, coverage: all}
+    candidate_set: {operation: pool}
+    modifiers: {volume: high, cross_lingual: true, obscurity: medium}
+    difficulty_sources: [parallel_semantic_workload, volume, cross_lingual, exhaustive_coverage]

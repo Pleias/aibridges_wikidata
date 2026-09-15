@@ -1,0 +1,42 @@
+{
+  "id": "SST_RETRIEVE_ONE_RESOLVE_THEN_INSPECT_002",
+  "design_card": "SST_RETRIEVE_ONE_RESOLVE_THEN_INSPECT",
+  "question": "Work only in the provided graph. Among events that record Morocco as a participant, identify the ordinary Arab summit described as held in Tunis on 31 March 2019. Follow the immediately preceding summit. Where and on what date was that earlier summit held? Quote the complete original evidence.",
+  "taxonomy": {
+    "category": "cross_lingual",
+    "type": "sst_retrieve_one_resolve_then_inspect"
+  },
+  "allowed_functions": [
+    "search_entity",
+    "search_property",
+    "edges",
+    "descriptions",
+    "name",
+    "has"
+  ],
+  "limits": {
+    "turns": 12
+  },
+  "answer": {
+    "schema": "canonical",
+    "format": "Call FINAL with exactly this JSON and no prose: {\"selected\":{\"qid\":\"Q...\",\"name\":\"...\",\"evidence\":\"...\"},\"previous\":{\"qid\":\"Q...\",\"name\":\"...\"},\"country\":\"...\",\"date\":\"YYYY-MM-DD\",\"language\":\"xx\",\"evidence\":\"exact stored description\"}.",
+    "expected": {
+      "selected": {
+        "qid": "Q62604500",
+        "name": "2019 Arab League summit",
+        "evidence": "قمة عربية عاديّة عُقدت في تونس يوم 31 آذار/مارس 2019"
+      },
+      "previous": {
+        "qid": "Q29513966",
+        "name": "2018 Arab League summit"
+      },
+      "country": "Saudi Arabia",
+      "date": "2018-04-15",
+      "language": "ar",
+      "evidence": "قمة عربية عاديّة عُقدت في السعوديّة يوم 15 نيسان/أبريل 2018"
+    }
+  },
+  "qids": [
+    "Q1028"
+  ]
+}

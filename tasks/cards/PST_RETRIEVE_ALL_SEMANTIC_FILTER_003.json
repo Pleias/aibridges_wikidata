@@ -1,0 +1,55 @@
+{
+  "id": "PST_RETRIEVE_ALL_SEMANTIC_FILTER_003",
+  "design_card": "PST_RETRIEVE_ALL_SEMANTIC_FILTER",
+  "question": "Work only in the provided graph. Among every entity recorded as located in Beijing, find all bodies described as being directly led by the General Secretary of the Chinese Communist Party and as the highest decision-making organ for a policy domain. Return the complete set, not a sample, and quote the complete original evidence for every inclusion.",
+  "taxonomy": {
+    "category": "cross_lingual",
+    "type": "pst_retrieve_all_semantic_filter"
+  },
+  "allowed_functions": [
+    "search_entity",
+    "search_property",
+    "edges",
+    "backlinks",
+    "descriptions",
+    "name",
+    "has"
+  ],
+  "limits": {
+    "turns": 12
+  },
+  "answer": {
+    "schema": "canonical",
+    "format": "Call FINAL with exactly this JSON and no prose: {\"pool_size\":0,\"count\":0,\"entities\":[{\"qid\":\"Q...\",\"name\":\"...\",\"language\":\"xx\",\"evidence\":\"exact stored description\"}]} with entities sorted by QID.",
+    "expected": {
+      "pool_size": 1040,
+      "count": 3,
+      "entities": [
+        {
+          "qid": "Q5061347",
+          "name": "Central Leading Group for Taiwan Affairs",
+          "language": "zh",
+          "evidence": "由中共中央總書記直接領導的台灣工作最高決策機關"
+        },
+        {
+          "qid": "Q6508730",
+          "name": "Central Financial and Economic Affairs Commission",
+          "language": "zh",
+          "evidence": "由中共中央总书记直接领导的财政经贸最高决策机关"
+        },
+        {
+          "qid": "Q10875058",
+          "name": "Central Foreign Affairs Commission",
+          "language": "zh",
+          "evidence": "由中共中央总书记直接领导的外事工作最高决策机关"
+        }
+      ]
+    },
+    "bookkeeping": [
+      "pool_size"
+    ]
+  },
+  "qids": [
+    "Q956"
+  ]
+}

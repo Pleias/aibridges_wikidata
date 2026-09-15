@@ -1,0 +1,31 @@
+{
+  "id": "ST_RETRIEVE_ONE_TEXTUAL_FACT_003",
+  "design_card": "ST_RETRIEVE_ONE_TEXTUAL_FACT",
+  "question": "Work only in the provided graph. On what exact date did the Battle of Hausa (1984) take place? Return the date in ISO format and quote the complete stored description that supports it.",
+  "taxonomy": {
+    "category": "cross_lingual",
+    "type": "st_retrieve_one_textual_fact"
+  },
+  "allowed_functions": [
+    "search_entity",
+    "descriptions",
+    "name",
+    "has"
+  ],
+  "limits": {
+    "turns": 8
+  },
+  "answer": {
+    "schema": "canonical",
+    "format": "Call FINAL with exactly this JSON and no prose: {\"entity\":{\"qid\":\"Q...\",\"name\":\"...\"},\"date\":\"YYYY-MM-DD\",\"language\":\"xx\",\"evidence\":\"exact stored description\"}.",
+    "expected": {
+      "entity": {
+        "qid": "Q56306635",
+        "name": "Battle of Hausa (1984)"
+      },
+      "date": "1984-11-25",
+      "language": "ar",
+      "evidence": "مواجهة عسكرية وقعت في 25 نوفمبر عام 1984 في منطقة الحوزة خلال حرب الصحراء الغربية عندما هاجمت قوات جبهة البوليساريو جدار الرمال"
+    }
+  }
+}

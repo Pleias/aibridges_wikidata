@@ -1,0 +1,42 @@
+{
+  "id": "SST_RETRIEVE_ONE_CROSS_LANGUAGE_RELAY_007",
+  "design_card": "SST_RETRIEVE_ONE_CROSS_LANGUAGE_RELAY",
+  "question": "Work only in the provided graph. Among people whose recorded field of work is judo, identify the Soviet and Russian coach described as an honored coach of Russia in both judo and sambo. Follow his recorded student relation. What distinct sporting qualifications are stated for that student? Return both people and quote the complete original evidence for each step.",
+  "taxonomy": {
+    "category": "cross_lingual",
+    "type": "sst_retrieve_one_cross_language_relay"
+  },
+  "allowed_functions": [
+    "search_entity",
+    "search_property",
+    "edges",
+    "backlinks",
+    "descriptions",
+    "name",
+    "has"
+  ],
+  "limits": {
+    "turns": 12
+  },
+  "answer": {
+    "schema": "canonical",
+    "format": "Call FINAL with exactly this JSON and no prose: {\"coach\":{\"qid\":\"Q...\",\"name\":\"...\",\"language\":\"xx\",\"evidence\":\"exact stored description\"},\"student\":{\"qid\":\"Q...\",\"name\":\"...\",\"language\":\"xx\",\"evidence\":\"exact stored description\"}}.",
+    "expected": {
+      "coach": {
+        "qid": "Q37587794",
+        "name": "Ivan Belousov",
+        "language": "ru",
+        "evidence": "советский и российский тренер по дзюдо и самбо, Заслуженный тренер России."
+      },
+      "student": {
+        "qid": "Q37595041",
+        "name": "Aleksey Sidorenko",
+        "language": "ru",
+        "evidence": "российский спортсмен, мастер спорта России по дзюдо, мастер спорта международного класса по самбо"
+      }
+    }
+  },
+  "qids": [
+    "Q11420"
+  ]
+}

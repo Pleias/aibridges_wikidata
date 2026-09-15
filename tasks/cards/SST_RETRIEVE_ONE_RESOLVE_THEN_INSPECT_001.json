@@ -1,0 +1,37 @@
+{
+  "id": "SST_RETRIEVE_ONE_RESOLVE_THEN_INSPECT_001",
+  "design_card": "SST_RETRIEVE_ONE_RESOLVE_THEN_INSPECT",
+  "question": "Work only in the provided graph. A historical Bulgarian administrative unit named Burgas Oblast existed from 1987 to 1999. Identify the correct entity, follow its recorded capital, and find the available description that identifies that capital as the administrative centre of Burgas Oblast. Quote the exact evidence.",
+  "taxonomy": {
+    "category": "semantic",
+    "type": "sst_retrieve_one_resolve_then_inspect"
+  },
+  "allowed_functions": [
+    "search_entity",
+    "search_property",
+    "edges",
+    "descriptions",
+    "name",
+    "has"
+  ],
+  "limits": {
+    "turns": 10
+  },
+  "answer": {
+    "schema": "canonical",
+    "format": "Call FINAL with exactly this JSON and no prose: {\"unit\":{\"qid\":\"Q...\",\"name\":\"...\",\"evidence\":\"...\"},\"capital\":{\"qid\":\"Q...\",\"name\":\"...\"},\"language\":\"xx\",\"evidence\":\"exact stored description\"}.",
+    "expected": {
+      "unit": {
+        "qid": "Q91611321",
+        "name": "Burgas Oblast",
+        "evidence": "область Болгарии (1987—1999)"
+      },
+      "capital": {
+        "qid": "Q6509",
+        "name": "Burgas"
+      },
+      "language": "ru",
+      "evidence": "город в Болгарии, административный центр Бургасской области"
+    }
+  }
+}

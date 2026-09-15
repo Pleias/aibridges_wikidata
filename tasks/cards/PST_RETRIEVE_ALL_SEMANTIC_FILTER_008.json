@@ -1,0 +1,55 @@
+{
+  "id": "PST_RETRIEVE_ALL_SEMANTIC_FILTER_008",
+  "design_card": "PST_RETRIEVE_ALL_SEMANTIC_FILTER",
+  "question": "Work only in the provided graph. Among every entity recorded as located in Tamanrasset Province, which natural features are described as the highest point or tallest mountain in Algeria? Return the complete set, not a sample, and quote every description that states the superlative.",
+  "taxonomy": {
+    "category": "cross_lingual",
+    "type": "pst_retrieve_all_semantic_filter"
+  },
+  "allowed_functions": [
+    "search_entity",
+    "search_property",
+    "edges",
+    "backlinks",
+    "descriptions",
+    "name",
+    "has"
+  ],
+  "limits": {
+    "turns": 12
+  },
+  "answer": {
+    "schema": "canonical",
+    "format": "Call FINAL with exactly this JSON and no prose: {\"pool_size\":0,\"count\":0,\"entities\":[{\"qid\":\"Q...\",\"name\":\"...\",\"descriptions\":[{\"language\":\"xx\",\"evidence\":\"exact stored description\"}]}]} with descriptions in en, fr, de, zh, ar, ru order.",
+    "expected": {
+      "pool_size": 1243,
+      "count": 1,
+      "entities": [
+        {
+          "qid": "Q822326",
+          "name": "Mount Tahat",
+          "descriptions": [
+            {
+              "language": "en",
+              "evidence": "tallest mountain in Algeria"
+            },
+            {
+              "language": "ar",
+              "evidence": "أعلى جبل في الجزائر"
+            },
+            {
+              "language": "ru",
+              "evidence": "гора в Африке (пустыне Сахаре), высшая точка Алжира"
+            }
+          ]
+        }
+      ]
+    },
+    "bookkeeping": [
+      "pool_size"
+    ]
+  },
+  "qids": [
+    "Q229467"
+  ]
+}

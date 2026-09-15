@@ -1,0 +1,41 @@
+{
+  "id": "PST_AGGREGATE_COUNT_CROSS_LINGUAL_001",
+  "design_card": "PST_AGGREGATE_COUNT_CROSS_LINGUAL",
+  "question": "Work only in the provided graph. Among all works recorded as having been filmed in Berlin, which are described as documentaries about mass surveillance? Return the complete set, the exact description supporting every inclusion, and the total count.",
+  "taxonomy": {
+    "category": "cross_lingual",
+    "type": "pst_aggregate_count_cross_lingual"
+  },
+  "allowed_functions": [
+    "search_entity",
+    "search_property",
+    "edges",
+    "descriptions",
+    "name",
+    "has"
+  ],
+  "limits": {
+    "turns": 12
+  },
+  "answer": {
+    "schema": "canonical",
+    "format": "Call FINAL with exactly this JSON and no prose: {\"reviewed\":N,\"matches\":[{\"qid\":\"Q...\",\"language\":\"xx\",\"evidence\":\"exact stored description\"}],\"count\":N}",
+    "expected": {
+      "reviewed": 245,
+      "matches": [
+        {
+          "qid": "Q18218448",
+          "language": "ru",
+          "evidence": "документальный фильм 2014 года, рассказывающий об Эдварде Сноудене и о разоблачённой им массовой слежке"
+        }
+      ],
+      "count": 1
+    },
+    "bookkeeping": [
+      "reviewed"
+    ]
+  },
+  "qids": [
+    "Q64"
+  ]
+}

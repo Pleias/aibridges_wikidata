@@ -1,0 +1,18 @@
+{
+ "id": "HIDE_MH_shared_hub_058",
+ "question": "Work only in the provided graph. Consider George Page, Robert Kotlowitz, Rhea G. Sikes, Richard J. Meyer, Gerard Appy. Two things. First: report every organisation that ALL FIVE of them are linked to as a place they worked. Second, and independently of the first: for each of the 5 anchors, report how many such workplaces it is linked to in total — count all of them, not only the shared ones.",
+ "taxonomy": {"category": "multi_hop", "type": "shared_hub_nameonly", "band": "medium"},
+ "allowed_functions": ["claims", "descriptions", "edges", "has", "name", "neighbors", "search_entity"],
+ "limits": {"turns": 15},
+ "answer": {
+  "schema": "canonical",
+  "format": "Call FINAL with exactly this JSON and no prose: {\"anchors\":[\"Q...\"],\"shared\":[\"Q...\"],\"per_anchor_total\":{\"Q...\":N}}",
+  "expected": {
+   "anchors": ["Q5543160", "Q86910218", "Q98737477", "Q98843719", "Q125524783"],
+   "shared": ["Q3120960"],
+   "per_anchor_total": {"Q5543160": 3, "Q86910218": 1, "Q98737477": 4, "Q98843719": 6, "Q125524783": 1}
+  }
+ },
+ "metrics": {"minimum_reads": 5, "band": "medium"},
+ "grounded_code": true
+}

@@ -1,0 +1,41 @@
+{
+  "id": "SST_AUDIT_SOURCE_DRILLDOWN_001",
+  "design_card": "SST_AUDIT_SOURCE_DRILLDOWN",
+  "question": "Work only in the provided graph. Among people recorded as employees of Amnesty International, identify the person described as a Taiwanese writer, journalist, translator, dissident, and historian. Audit that person's described-by-source links. Which linked source is suspect because its own descriptions identify it as a book by a different author? Return the exact evidence for both decisions.",
+  "taxonomy": {
+    "category": "references",
+    "type": "sst_audit_source_drilldown"
+  },
+  "allowed_functions": [
+    "search_entity",
+    "search_property",
+    "edges",
+    "descriptions",
+    "name",
+    "has"
+  ],
+  "limits": {
+    "turns": 12
+  },
+  "answer": {
+    "schema": "canonical",
+    "format": "Call FINAL with exactly this JSON and no prose: {\"person\":{\"qid\":\"Q...\",\"name\":\"...\",\"language\":\"xx\",\"evidence\":\"...\"},\"source\":{\"qid\":\"Q...\",\"name\":\"...\",\"language\":\"xx\",\"evidence\":\"...\"}}.",
+    "expected": {
+      "person": {
+        "qid": "Q704051",
+        "name": "Bo Yang",
+        "language": "ru",
+        "evidence": "тайваньский писатель, журналист, переводчик, диссидент, историк"
+      },
+      "source": {
+        "qid": "Q24087826",
+        "name": "Fishes of the Yellow River and Beyond",
+        "language": "en",
+        "evidence": "Book by Sizhong Li"
+      }
+    }
+  },
+  "qids": [
+    "Q42970"
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "id": "PST_AGGREGATE_COMPARE_HUBS_001",
+  "design_card": "PST_AGGREGATE_COMPARE_HUBS",
+  "question": "Work only in the provided graph. Compare all people recorded as employees of Amnesty International with all people recorded as employees of PBS. Which organization has more people described as combining literary, artistic, or media work with activism, human-rights advocacy, or dissidence? Return both complete matching sets with exact evidence, both counts, and the winner.",
+  "taxonomy": {
+    "category": "semantic",
+    "type": "pst_aggregate_compare_hubs"
+  },
+  "allowed_functions": [
+    "search_entity",
+    "search_property",
+    "edges",
+    "descriptions",
+    "name",
+    "has"
+  ],
+  "limits": {
+    "turns": 15
+  },
+  "answer": {
+    "schema": "canonical",
+    "format": "Call FINAL with exactly this JSON and no prose: {\"reviewed\":{\"amnesty\":N,\"pbs\":N},\"matches\":{\"amnesty\":[{\"qid\":\"Q...\",\"evidence\":\"...\"}],\"pbs\":[{\"qid\":\"Q...\",\"evidence\":\"...\"}]},\"counts\":{\"amnesty\":N,\"pbs\":N},\"winner\":\"...\"}. Use English evidence when available, otherwise the alphabetically first available language; sort each list by numeric QID.",
+    "expected": {
+      "reviewed": {
+        "amnesty": 114,
+        "pbs": 45
+      },
+      "matches": {
+        "amnesty": [
+          {
+            "qid": "Q257835",
+            "evidence": "bangladeschische Juristin, Menschenrechtsaktivistin und Autorin"
+          },
+          {
+            "qid": "Q704051",
+            "evidence": "тайваньский писатель, журналист, переводчик, диссидент, историк"
+          },
+          {
+            "qid": "Q3086711",
+            "evidence": "algerischer Autor, Lehrer und Menschenrechtsaktivist"
+          },
+          {
+            "qid": "Q5565037",
+            "evidence": "Indian writer and activist"
+          },
+          {
+            "qid": "Q15149893",
+            "evidence": "Swedish Human rights activist, blogger and book author"
+          },
+          {
+            "qid": "Q34028712",
+            "evidence": "German writer and human rights activist"
+          },
+          {
+            "qid": "Q65165620",
+            "evidence": "brasilianische Ärztin, Autorin und Menschenrechtsaktivistin"
+          }
+        ],
+        "pbs": [
+          {
+            "qid": "Q5074602",
+            "evidence": "militante des droits civiques et journaliste américaine"
+          }
+        ]
+      },
+      "counts": {
+        "amnesty": 7,
+        "pbs": 1
+      },
+      "winner": "Amnesty International"
+    },
+    "bookkeeping": [
+      "reviewed"
+    ]
+  },
+  "qids": [
+    "Q42970",
+    "Q215616"
+  ]
+}

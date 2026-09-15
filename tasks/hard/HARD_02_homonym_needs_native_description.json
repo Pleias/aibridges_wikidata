@@ -1,0 +1,44 @@
+{
+ "id": "HARD_02_homonym_needs_native_description",
+ "question": "Work only in the provided graph. Peter Tuckermann (Q1544379) is linked to two different people who carry the exact same English label, 'Anna Tuckermann'. Neither of them has an English description, and their labels are identical strings, so nothing about the names separates them. Read what the graph does record about each and answer three things: which of the two was his FIRST wife, which was his SECOND wife, and which of the two is recorded as having founded an orphanage. Quote, exactly as stored, the description string that establishes the orphanage answer.",
+ "taxonomy": {
+  "category": "cross_lingual",
+  "type": "certified_homonym"
+ },
+ "allowed_functions": [
+  "edges",
+  "descriptions",
+  "labels",
+  "languages",
+  "name",
+  "has"
+ ],
+ "limits": {
+  "turns": 10
+ },
+ "answer": {
+  "schema": "canonical",
+  "format": "Call FINAL with exactly this JSON and no prose: {\"first_wife\":\"Q...\",\"second_wife\":\"Q...\",\"orphanage_founder\":\"Q...\",\"evidence\":\"<the description string, copied exactly>\"}",
+  "expected": {
+   "first_wife": "Q55905866",
+   "second_wife": "Q111630649",
+   "orphanage_founder": "Q111630649",
+   "evidence": "deutsche Waisenhausstifterin; zweite Ehefrau von Peter Tuckermann (1595-1678)"
+  }
+ },
+ "qids": [
+  "Q1544379"
+ ],
+ "metrics": {
+  "minimum_reads": 3
+ },
+ "certificate": {
+  "identical_labels": "both candidates are labelled 'Anna Tuckermann' — every label embedding scores them equally, and any similarity ranking is a coin flip",
+  "no_english": "neither candidate has an English description; the discriminator exists only in German",
+  "evidence_gate": "the expected answer contains the exact stored string, so a recalled answer cannot match",
+  "baseline": {
+   "policy": "label similarity between the two candidates",
+   "correct": "tie by construction (identical strings)"
+  }
+ }
+}

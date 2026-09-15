@@ -1,0 +1,43 @@
+{
+  "id": "PST_RETRIEVE_ALL_SEMANTIC_FILTER_004",
+  "design_card": "PST_RETRIEVE_ALL_SEMANTIC_FILTER",
+  "question": "Work only in the provided graph. Among every person recorded with judo as their sport, find all people described as holding the Russian Master of Sport qualification in judo and the International Class Master of Sport qualification in sambo. Return the complete set, not a sample, and quote the complete original evidence for every inclusion.",
+  "taxonomy": {
+    "category": "cross_lingual",
+    "type": "pst_retrieve_all_semantic_filter"
+  },
+  "allowed_functions": [
+    "search_entity",
+    "search_property",
+    "edges",
+    "backlinks",
+    "descriptions",
+    "name",
+    "has"
+  ],
+  "limits": {
+    "turns": 12
+  },
+  "answer": {
+    "schema": "canonical",
+    "format": "Call FINAL with exactly this JSON and no prose: {\"pool_size\":0,\"count\":0,\"entities\":[{\"qid\":\"Q...\",\"name\":\"...\",\"language\":\"xx\",\"evidence\":\"exact stored description\"}]} with entities sorted by QID.",
+    "expected": {
+      "pool_size": 12404,
+      "count": 1,
+      "entities": [
+        {
+          "qid": "Q37595041",
+          "name": "Aleksey Sidorenko",
+          "language": "ru",
+          "evidence": "российский спортсмен, мастер спорта России по дзюдо, мастер спорта международного класса по самбо"
+        }
+      ]
+    },
+    "bookkeeping": [
+      "pool_size"
+    ]
+  },
+  "qids": [
+    "Q11420"
+  ]
+}

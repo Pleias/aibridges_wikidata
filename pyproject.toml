@@ -1,0 +1,17 @@
+[project]
+name = "wikimedia-rlm"
+version = "0.1.0"
+description = "Recursive Language Model harness and benchmark over a frozen Wikidata graph"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "datasets>=5.0.1",
+    "numpy>=2.5.1",
+    "openai>=2.53.0",
+    "orjson>=3.11.9",
+    "pyarrow>=25.0.0",
+    "requests>=2.34.2",
+    "sentence-transformers>=5.7.0",
+    "tantivy>=0.26.0",
+    "tenacity>=9.1.4",
+]

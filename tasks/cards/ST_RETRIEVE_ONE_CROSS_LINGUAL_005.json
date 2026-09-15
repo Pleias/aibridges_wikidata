@@ -1,0 +1,36 @@
+{
+  "id": "ST_RETRIEVE_ONE_CROSS_LINGUAL_005",
+  "design_card": "ST_RETRIEVE_ONE_CROSS_LINGUAL",
+  "question": "Work only in the provided graph. Among the subjects recorded as located in Belarus, which one is described as a period of cultural and artistic revival? Return the entity and quote the complete original evidence.",
+  "taxonomy": {
+    "category": "cross_lingual",
+    "type": "st_retrieve_one_cross_lingual"
+  },
+  "allowed_functions": [
+    "search_entity",
+    "search_property",
+    "edges",
+    "backlinks",
+    "descriptions",
+    "name",
+    "has"
+  ],
+  "limits": {
+    "turns": 10
+  },
+  "answer": {
+    "schema": "canonical",
+    "format": "Call FINAL with exactly this JSON and no prose: {\"entity\":{\"qid\":\"Q...\",\"name\":\"...\"},\"language\":\"xx\",\"evidence\":\"exact stored description\"}.",
+    "expected": {
+      "entity": {
+        "qid": "Q26922893",
+        "name": "Belarusian Renaissance"
+      },
+      "language": "ru",
+      "evidence": "период культурного и художественного возрождения"
+    }
+  },
+  "qids": [
+    "Q184"
+  ]
+}

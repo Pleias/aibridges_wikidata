@@ -1,0 +1,100 @@
+{
+  "id": "LT_RETRIEVE_ALL_DIFFERENCE_OBSCURE_002",
+  "design_card": "LT_RETRIEVE_ALL_DIFFERENCE_OBSCURE",
+  "question": "Work only in the provided graph. Which taxa are linked by the found-in-taxon relation to octadec-9-enoic acid but not to oleic acid? Return the complete set and exact count.",
+  "taxonomy": {
+    "category": "multi_hop",
+    "type": "lt_retrieve_all_difference_obscure"
+  },
+  "allowed_functions": [
+    "search_entity",
+    "search_property",
+    "edges",
+    "name",
+    "has"
+  ],
+  "limits": {
+    "turns": 8
+  },
+  "answer": {
+    "schema": "canonical",
+    "format": "Call FINAL with exactly this JSON and no prose: {\"items\":[{\"qid\":\"Q...\",\"name\":\"...\"}],\"count\":N}. Sort items by numeric QID.",
+    "expected": {
+      "items": [
+        {
+          "qid": "Q158150",
+          "name": "Symphoricarpos albus"
+        },
+        {
+          "qid": "Q207848",
+          "name": "Arnica montana"
+        },
+        {
+          "qid": "Q857092",
+          "name": "Eclipta prostrata"
+        },
+        {
+          "qid": "Q1150684",
+          "name": "Sonneratia alba"
+        },
+        {
+          "qid": "Q1973585",
+          "name": "Millettia pinnata"
+        },
+        {
+          "qid": "Q2703227",
+          "name": "Alpinia zerumbet"
+        },
+        {
+          "qid": "Q3190385",
+          "name": "Justicia betonica"
+        },
+        {
+          "qid": "Q3595915",
+          "name": "Terminalia chebula"
+        },
+        {
+          "qid": "Q4154229",
+          "name": "Gryllotalpa orientalis"
+        },
+        {
+          "qid": "Q15228458",
+          "name": "Sorbus pallescens"
+        },
+        {
+          "qid": "Q15232469",
+          "name": "Euphorbia kansui"
+        },
+        {
+          "qid": "Q38398782",
+          "name": "Justicia trinervia"
+        },
+        {
+          "qid": "Q42686647",
+          "name": "Ferula ammoniacum"
+        },
+        {
+          "qid": "Q42733662",
+          "name": "Capparis spinosa var. ovata"
+        },
+        {
+          "qid": "Q50851433",
+          "name": "Pongamia glabra"
+        },
+        {
+          "qid": "Q95985830",
+          "name": "Griffitharia pallescens"
+        },
+        {
+          "qid": "Q100487139",
+          "name": "Pongamia pinnata var. pinnata"
+        }
+      ],
+      "count": 17
+    }
+  },
+  "qids": [
+    "Q27116668",
+    "Q207688"
+  ]
+}

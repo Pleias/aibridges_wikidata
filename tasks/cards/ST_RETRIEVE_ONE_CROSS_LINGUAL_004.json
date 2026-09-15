@@ -1,0 +1,37 @@
+{
+  "id": "ST_RETRIEVE_ONE_CROSS_LINGUAL_004",
+  "design_card": "ST_RETRIEVE_ONE_CROSS_LINGUAL",
+  "question": "Work only in the provided graph. Which publication issued in Shenyang is described as a reference work covering all fish, amphibians, reptiles, birds, and mammals then known in China? How many species does its description say it contains? Return the publication and quote the complete original evidence.",
+  "taxonomy": {
+    "category": "cross_lingual",
+    "type": "st_retrieve_one_cross_lingual"
+  },
+  "allowed_functions": [
+    "search_entity",
+    "search_property",
+    "edges",
+    "backlinks",
+    "descriptions",
+    "name",
+    "has"
+  ],
+  "limits": {
+    "turns": 10
+  },
+  "answer": {
+    "schema": "canonical",
+    "format": "Call FINAL with exactly this JSON and no prose: {\"entity\":{\"qid\":\"Q...\",\"name\":\"...\"},\"species_count\":0,\"language\":\"xx\",\"evidence\":\"exact stored description\"}.",
+    "expected": {
+      "entity": {
+        "qid": "Q116186813",
+        "name": "Chinese Vertebrate Encyclopedia"
+      },
+      "species_count": 5534,
+      "language": "zh",
+      "evidence": "辽宁大学出版社2000年4月出版的参考书，收编中国当时已知全部鱼类、两栖类与爬行类、鸟类、兽类，共计达5534种"
+    }
+  },
+  "qids": [
+    "Q11720"
+  ]
+}

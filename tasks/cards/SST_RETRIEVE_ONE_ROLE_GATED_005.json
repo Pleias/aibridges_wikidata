@@ -1,0 +1,41 @@
+{
+  "id": "SST_RETRIEVE_ONE_ROLE_GATED_005",
+  "design_card": "SST_RETRIEVE_ONE_ROLE_GATED",
+  "question": "Work only in the provided graph. Among people whose recorded place of death is Iraq, identify the person described as a hadith narrator, jurist, judge, and mufti of Medina. Inspect the people recorded as his students. Which student is described as the founder of the Maliki school, and what is the exact evidence?",
+  "taxonomy": {
+    "category": "semantic",
+    "type": "sst_retrieve_one_role_gated"
+  },
+  "allowed_functions": [
+    "search_entity",
+    "search_property",
+    "edges",
+    "descriptions",
+    "name",
+    "has"
+  ],
+  "limits": {
+    "turns": 12
+  },
+  "answer": {
+    "schema": "canonical",
+    "format": "Call FINAL with exactly this JSON and no prose: {\"teacher\":{\"qid\":\"Q...\",\"name\":\"...\",\"language\":\"xx\",\"evidence\":\"...\"},\"student\":{\"qid\":\"Q...\",\"name\":\"...\"},\"language\":\"xx\",\"evidence\":\"exact stored description\"}.",
+    "expected": {
+      "teacher": {
+        "qid": "Q12251685",
+        "name": "Yahya ibn Sa'id al-Ansari",
+        "language": "ar",
+        "evidence": "تابعي، وأحد رواة الحديث النبوي، وفقيه وقاضي ومفتي المدينة المنورة"
+      },
+      "student": {
+        "qid": "Q312299",
+        "name": "Malik ibn Anas"
+      },
+      "language": "ar",
+      "evidence": "ثاني الأئمة الأربعة ومؤسس المذهب المالكي (93 – 179هـ / 711 – 795م)"
+    }
+  },
+  "qids": [
+    "Q796"
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "id": "PST_AUDIT_MISSING_FACT_001",
+  "design_card": "PST_AUDIT_MISSING_FACT",
+  "question": "Work only in the provided graph. Audit every person recorded as an employee of Amnesty International. Among those with no country-of-citizenship link, which have a description that explicitly suggests a nationality? Return the complete set as potential enrichment candidates, with the suggested nationality and exact evidence for each inclusion.",
+  "taxonomy": {
+    "category": "references",
+    "type": "pst_audit_missing_fact"
+  },
+  "allowed_functions": [
+    "search_entity",
+    "search_property",
+    "edges",
+    "descriptions",
+    "name",
+    "has"
+  ],
+  "limits": {
+    "turns": 15
+  },
+  "answer": {
+    "schema": "canonical",
+    "format": "Call FINAL with exactly this JSON and no prose: {\"reviewed\":N,\"missing_citizenship\":N,\"candidates\":[{\"qid\":\"Q...\",\"name\":\"...\",\"suggested_nationality\":\"...\",\"language\":\"xx\",\"evidence\":\"exact stored description\"}],\"count\":N}. For evidence, use English when available; otherwise use the alphabetically first available language. Sort candidates by numeric QID.",
+    "expected": {
+      "reviewed": 114,
+      "missing_citizenship": 19,
+      "candidates": [
+        {
+          "qid": "Q16194578",
+          "name": "Steven W. Hawkins",
+          "suggested_nationality": "American",
+          "language": "en",
+          "evidence": "American lawyer"
+        },
+        {
+          "qid": "Q29551293",
+          "name": "Hajo Wandschneider",
+          "suggested_nationality": "German",
+          "language": "en",
+          "evidence": "German defense lawyer"
+        },
+        {
+          "qid": "Q34028712",
+          "name": "Urs M. Fiechtner",
+          "suggested_nationality": "German",
+          "language": "en",
+          "evidence": "German writer and human rights activist"
+        },
+        {
+          "qid": "Q50308792",
+          "name": "Markus N. Beeko",
+          "suggested_nationality": "German",
+          "language": "en",
+          "evidence": "German activist"
+        },
+        {
+          "qid": "Q55238295",
+          "name": "Margarita Sánchez De León",
+          "suggested_nationality": "Puerto Rican",
+          "language": "en",
+          "evidence": "Puerto Rican GBT activist and minister"
+        },
+        {
+          "qid": "Q63439448",
+          "name": "Lynne Nottage",
+          "suggested_nationality": "American",
+          "language": "en",
+          "evidence": "American playwright"
+        },
+        {
+          "qid": "Q63758774",
+          "name": "Franz-Josef Hutter",
+          "suggested_nationality": "German",
+          "language": "de",
+          "evidence": "deutscher Menschenrechtsaktivist und Politikwissenschaftler"
+        },
+        {
+          "qid": "Q64767990",
+          "name": "Zahir Janmohamed",
+          "suggested_nationality": "American",
+          "language": "en",
+          "evidence": "American writer"
+        },
+        {
+          "qid": "Q108865584",
+          "name": "Wolfgang Grenz",
+          "suggested_nationality": "German",
+          "language": "de",
+          "evidence": "deutscher Jurist, Generalsekretär von Amnesty International"
+        }
+      ],
+      "count": 9
+    },
+    "bookkeeping": [
+      "missing_citizenship",
+      "reviewed"
+    ]
+  },
+  "qids": [
+    "Q42970"
+  ]
+}

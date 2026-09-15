@@ -1,0 +1,135 @@
+{
+  "id": "PST_AGGREGATE_PARTITION_001",
+  "design_card": "PST_AGGREGATE_PARTITION",
+  "question": "Work only in the provided graph. Consider every person recorded as an employee of Amnesty International who has no country-of-citizenship link. Partition the complete set by the nationality explicitly suggested in their descriptions, with a separate unstated group. Return exact evidence for every stated assignment and exact group counts.",
+  "taxonomy": {
+    "category": "semantic",
+    "type": "pst_aggregate_partition"
+  },
+  "allowed_functions": [
+    "search_entity",
+    "search_property",
+    "edges",
+    "descriptions",
+    "name",
+    "has"
+  ],
+  "limits": {
+    "turns": 15
+  },
+  "answer": {
+    "schema": "canonical",
+    "format": "Call FINAL with exactly this JSON and no prose: {\"reviewed_employees\":N,\"partitioned\":N,\"groups\":{\"American\":[{\"qid\":\"Q...\",\"name\":\"...\",\"evidence\":\"...\"}],\"German\":[...],\"Puerto Rican\":[...],\"unstated\":[{\"qid\":\"Q...\",\"name\":\"...\"}]},\"counts\":{\"American\":N,\"German\":N,\"Puerto Rican\":N,\"unstated\":N}}. Use English evidence when available, otherwise the alphabetically first available language; sort each group by numeric QID.",
+    "expected": {
+      "reviewed_employees": 114,
+      "partitioned": 19,
+      "groups": {
+        "American": [
+          {
+            "qid": "Q16194578",
+            "name": "Steven W. Hawkins",
+            "evidence": "American lawyer"
+          },
+          {
+            "qid": "Q63439448",
+            "name": "Lynne Nottage",
+            "evidence": "American playwright"
+          },
+          {
+            "qid": "Q64767990",
+            "name": "Zahir Janmohamed",
+            "evidence": "American writer"
+          }
+        ],
+        "German": [
+          {
+            "qid": "Q29551293",
+            "name": "Hajo Wandschneider",
+            "evidence": "German defense lawyer"
+          },
+          {
+            "qid": "Q34028712",
+            "name": "Urs M. Fiechtner",
+            "evidence": "German writer and human rights activist"
+          },
+          {
+            "qid": "Q50308792",
+            "name": "Markus N. Beeko",
+            "evidence": "German activist"
+          },
+          {
+            "qid": "Q63758774",
+            "name": "Franz-Josef Hutter",
+            "evidence": "deutscher Menschenrechtsaktivist und Politikwissenschaftler"
+          },
+          {
+            "qid": "Q108865584",
+            "name": "Wolfgang Grenz",
+            "evidence": "deutscher Jurist, Generalsekretär von Amnesty International"
+          }
+        ],
+        "Puerto Rican": [
+          {
+            "qid": "Q55238295",
+            "name": "Margarita Sánchez De León",
+            "evidence": "Puerto Rican GBT activist and minister"
+          }
+        ],
+        "unstated": [
+          {
+            "qid": "Q5487530",
+            "name": "Frank Jannuzi"
+          },
+          {
+            "qid": "Q6375509",
+            "name": "Kate Gilmore"
+          },
+          {
+            "qid": "Q7650927",
+            "name": "Suzanne Nossel"
+          },
+          {
+            "qid": "Q16214746",
+            "name": "Kristyan Benedict"
+          },
+          {
+            "qid": "Q29541389",
+            "name": "Marcelo Pollack"
+          },
+          {
+            "qid": "Q30070256",
+            "name": "Benedict Southworth"
+          },
+          {
+            "qid": "Q64505916",
+            "name": "Susanna Rance"
+          },
+          {
+            "qid": "Q77431170",
+            "name": "Julie Verhaar"
+          },
+          {
+            "qid": "Q79695865",
+            "name": "Michael Hammer"
+          },
+          {
+            "qid": "Q112344194",
+            "name": "Emma Luce Scali"
+          }
+        ]
+      },
+      "counts": {
+        "American": 3,
+        "German": 5,
+        "Puerto Rican": 1,
+        "unstated": 10
+      }
+    },
+    "bookkeeping": [
+      "reviewed_employees"
+    ]
+  },
+  "qids": [
+    "Q42970"
+  ]
+}

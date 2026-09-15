@@ -1,0 +1,112 @@
+{
+  "id": "LT_RETRIEVE_ALL_DIFFERENCE_OBSCURE_003",
+  "design_card": "LT_RETRIEVE_ALL_DIFFERENCE_OBSCURE",
+  "question": "Work only in the provided graph. Which entities record Estonia as a participant but do not record Denmark as a participant? Return the complete set and exact count.",
+  "taxonomy": {
+    "category": "multi_hop",
+    "type": "lt_retrieve_all_difference_obscure"
+  },
+  "allowed_functions": [
+    "search_entity",
+    "search_property",
+    "edges",
+    "name",
+    "has"
+  ],
+  "limits": {
+    "turns": 8
+  },
+  "answer": {
+    "schema": "canonical",
+    "format": "Call FINAL with exactly this JSON and no prose: {\"items\":[{\"qid\":\"Q...\",\"name\":\"...\"}],\"count\":N}. Sort items by numeric QID.",
+    "expected": {
+      "items": [
+        {
+          "qid": "Q167759",
+          "name": "Baltic Entente"
+        },
+        {
+          "qid": "Q745662",
+          "name": "Baltic Naval Squadron"
+        },
+        {
+          "qid": "Q1975306",
+          "name": "post-Soviet conflicts"
+        },
+        {
+          "qid": "Q2001082",
+          "name": "Allied intervention in the Russian Civil War"
+        },
+        {
+          "qid": "Q2304946",
+          "name": "New Wave"
+        },
+        {
+          "qid": "Q3739093",
+          "name": "Soviet–Estonian Mutual Assistance Treaty"
+        },
+        {
+          "qid": "Q17045046",
+          "name": "Military-diplomatic mission of the Belarusian Democratic Republicin Latvia and Estonia"
+        },
+        {
+          "qid": "Q19855738",
+          "name": "China–Estonia relations"
+        },
+        {
+          "qid": "Q20434525",
+          "name": "Estonia–Serbia relations"
+        },
+        {
+          "qid": "Q32069506",
+          "name": "Three Seas Initiative"
+        },
+        {
+          "qid": "Q42719470",
+          "name": "Estonia–Iceland relations"
+        },
+        {
+          "qid": "Q55721409",
+          "name": "Cooperation between China and Central and Eastern European Countries"
+        },
+        {
+          "qid": "Q59914714",
+          "name": "2019 World Wheelchair Curling Championship"
+        },
+        {
+          "qid": "Q62554402",
+          "name": "2020 World Wheelchair Curling Championship"
+        },
+        {
+          "qid": "Q104561698",
+          "name": "2021 World Mixed Doubles Curling Championship"
+        },
+        {
+          "qid": "Q113269630",
+          "name": "recognition of Russia as a terrorist state"
+        },
+        {
+          "qid": "Q116695747",
+          "name": "humanitarian response to the 2023 Turkey–Syria earthquake"
+        },
+        {
+          "qid": "Q136418700",
+          "name": "Estonia–Faroe Islands relations"
+        },
+        {
+          "qid": "Q136418716",
+          "name": "Estonia–Africa relations"
+        },
+        {
+          "qid": "Q136418737",
+          "name": "Estonia–India relations"
+        }
+      ],
+      "count": 20
+    }
+  },
+  "qids": [
+    "Q191",
+    "Q35"
+  ]
+}

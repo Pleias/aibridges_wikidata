@@ -1,0 +1,55 @@
+{
+  "id": "PST_RETRIEVE_ALL_SEMANTIC_FILTER_006",
+  "design_card": "PST_RETRIEVE_ALL_SEMANTIC_FILTER",
+  "question": "Work only in the provided graph. Among every person recorded as having works in the National Gallery of Australia collection, who is described as both an artist and an activist or campaigner? Return the complete set, not a sample, and quote the exact evidence for every inclusion.",
+  "taxonomy": {
+    "category": "semantic",
+    "type": "pst_retrieve_all_semantic_filter"
+  },
+  "allowed_functions": [
+    "search_entity",
+    "search_property",
+    "edges",
+    "backlinks",
+    "descriptions",
+    "name",
+    "has"
+  ],
+  "limits": {
+    "turns": 12
+  },
+  "answer": {
+    "schema": "canonical",
+    "format": "Call FINAL with exactly this JSON and no prose: {\"pool_size\":0,\"count\":0,\"entities\":[{\"qid\":\"Q...\",\"name\":\"...\",\"language\":\"xx\",\"evidence\":\"exact stored description\"}]} with entities sorted by numeric QID.",
+    "expected": {
+      "pool_size": 1147,
+      "count": 3,
+      "entities": [
+        {
+          "qid": "Q5297435",
+          "name": "Dora Meeson",
+          "language": "en",
+          "evidence": "Australian painter and women’s suffrage activist (1869-1955)"
+        },
+        {
+          "qid": "Q21537196",
+          "name": "Rachel Mary Roxburgh",
+          "language": "en",
+          "evidence": "artist, educator and activist (1915–1991)"
+        },
+        {
+          "qid": "Q86303651",
+          "name": "Rea Saunders",
+          "language": "en",
+          "evidence": "Australian artist, curator, activist and lecturer, aka r e a (born 1962)"
+        }
+      ]
+    },
+    "bookkeeping": [
+      "pool_size"
+    ]
+  },
+  "qids": [
+    "Q795228"
+  ]
+}

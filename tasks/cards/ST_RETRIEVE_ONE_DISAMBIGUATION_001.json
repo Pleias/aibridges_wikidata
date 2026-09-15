@@ -1,0 +1,31 @@
+{
+  "id": "ST_RETRIEVE_ONE_DISAMBIGUATION_001",
+  "design_card": "ST_RETRIEVE_ONE_DISAMBIGUATION",
+  "question": "Work only in the provided graph. Peter Tuckermann had two wives who are both recorded under the name Anna Tuckermann. Identify which woman was his first wife, which was his second wife, and which of them founded an orphanage. Quote the exact stored description that supports the orphanage answer.",
+  "taxonomy": {
+    "category": "semantic",
+    "type": "st_retrieve_one_disambiguation"
+  },
+  "allowed_functions": [
+    "search_entity",
+    "edges",
+    "descriptions",
+    "labels",
+    "name",
+    "has"
+  ],
+  "limits": {
+    "turns": 10
+  },
+  "answer": {
+    "schema": "canonical",
+    "format": "Call FINAL with exactly this JSON and no prose: {\"first_wife\":\"Q...\",\"second_wife\":\"Q...\",\"orphanage_founder\":\"Q...\",\"evidence\":\"exact stored description\"}",
+    "expected": {
+      "first_wife": "Q55905866",
+      "second_wife": "Q111630649",
+      "orphanage_founder": "Q111630649",
+      "evidence": "deutsche Waisenhausstifterin; zweite Ehefrau von Peter Tuckermann (1595-1678)"
+    }
+  },
+  "grounded_code": true
+}

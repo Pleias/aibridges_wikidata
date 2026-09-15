@@ -1,0 +1,18 @@
+{
+ "id": "HIDE_MH_ancestor_genealogy_003",
+ "question": "Work only in the provided graph. Gustave Fould and Juliette Fould are two people. Following only links that record who a person's parents are, up to 4 steps from each, find every common ancestor that minimizes the sum of the two distances. For each one give both distances and one shortest path from each starting point, endpoints included. When several shortest paths tie, keep the one whose numeric QIDs are lexicographically smallest.",
+ "taxonomy": {"category": "multi_hop", "type": "ancestor_genealogy_nameonly", "band": "medium"},
+ "allowed_functions": ["descriptions", "edges", "has", "name", "neighbors", "search_entity"],
+ "limits": {"turns": 20},
+ "answer": {
+  "schema": "canonical",
+  "format": "Call FINAL with exactly this JSON and no prose: {\"anchor_a\":\"Q...\",\"anchor_b\":\"Q...\",\"common_ancestors\":[{\"ancestor\":\"Q...\",\"distance_a\":N,\"distance_b\":N,\"path_a\":{\"ordered\":[\"Q...\"]},\"path_b\":{\"ordered\":[\"Q...\"]}}]}",
+  "expected": {
+   "anchor_a": "Q3121088",
+   "anchor_b": "Q15059214",
+   "common_ancestors": [{"ancestor": "Q15058779", "distance_a": 3, "distance_b": 3, "path_a": {"ordered": ["Q3121088", "Q340215", "Q2893691", "Q15058779"]}, "path_b": {"ordered": ["Q15059214", "Q15058787", "Q15058781", "Q15058779"]}}]
+  }
+ },
+ "metrics": {"minimum_reads": 9, "band": "medium"},
+ "grounded_code": true
+}

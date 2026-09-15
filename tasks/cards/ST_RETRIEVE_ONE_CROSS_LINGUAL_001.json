@@ -1,0 +1,27 @@
+{
+  "id": "ST_RETRIEVE_ONE_CROSS_LINGUAL_001",
+  "question": "Work only in the provided graph. A historical bibliography refers to an Ivan Andreyevsky who combined careers in writing, law, history, archival work, hygiene, and teaching. Which graph entity does it mean? Return the entity and the wording in the graph that identifies him.",
+  "taxonomy": {
+    "category": "cross_lingual",
+    "type": "st_retrieve_one_cross_lingual"
+  },
+  "allowed_functions": [
+    "search_entity",
+    "descriptions",
+    "labels",
+    "name",
+    "has"
+  ],
+  "limits": {
+    "turns": 8
+  },
+  "answer": {
+    "schema": "canonical",
+    "format": "Call FINAL with exactly this JSON and no prose: {\"entity\":\"Q...\",\"evidence\":\"exact stored description\"}",
+    "expected": {
+      "entity": "Q4065721",
+      "evidence": "русский писатель, юрист, историк, архивист, гигиенист, педагог"
+    }
+  },
+  "design_card": "ST_RETRIEVE_ONE_CROSS_LINGUAL"
+}

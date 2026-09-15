@@ -1,0 +1,15 @@
+# Site configuration and secrets
+.env
+config/local.env
+
+# Large or generated data
+data/
+storage/
+results/
+logs/
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/

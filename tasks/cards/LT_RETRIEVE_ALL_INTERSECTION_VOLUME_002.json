@@ -1,0 +1,44 @@
+{
+  "id": "LT_RETRIEVE_ALL_INTERSECTION_VOLUME_002",
+  "design_card": "LT_RETRIEVE_ALL_INTERSECTION_VOLUME",
+  "question": "Work only in the provided graph. Which bodies of water have both Estonia and Lithuania recorded as basin countries? Return the complete set and its exact count.",
+  "taxonomy": {
+    "category": "multi_hop",
+    "type": "lt_retrieve_all_intersection_volume"
+  },
+  "allowed_functions": [
+    "search_entity",
+    "search_property",
+    "edges",
+    "name",
+    "has"
+  ],
+  "limits": {
+    "turns": 8
+  },
+  "answer": {
+    "schema": "canonical",
+    "format": "Call FINAL with exactly this JSON and no prose: {\"items\":[{\"qid\":\"Q...\",\"name\":\"...\"}],\"count\":N}. Sort items by numeric QID.",
+    "expected": {
+      "items": [
+        {
+          "qid": "Q97",
+          "name": "Atlantic Ocean"
+        },
+        {
+          "qid": "Q545",
+          "name": "Baltic Sea"
+        },
+        {
+          "qid": "Q8197",
+          "name": "Daugava"
+        }
+      ],
+      "count": 3
+    }
+  },
+  "qids": [
+    "Q191",
+    "Q37"
+  ]
+}

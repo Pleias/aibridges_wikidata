@@ -1,0 +1,41 @@
+{
+  "id": "SST_RETRIEVE_ONE_ROLE_GATED_003",
+  "design_card": "SST_RETRIEVE_ONE_ROLE_GATED",
+  "question": "Work only in the provided graph. Among works about Israel, identify the book described as tracing Germany's relationship with the Arab East from Kaiser Wilhelm II to Angela Merkel. Follow the book series to which it belongs. Which institution does the series description say issues it? Quote the exact evidence.",
+  "taxonomy": {
+    "category": "cross_lingual",
+    "type": "sst_retrieve_one_role_gated"
+  },
+  "allowed_functions": [
+    "search_entity",
+    "search_property",
+    "edges",
+    "descriptions",
+    "name",
+    "has"
+  ],
+  "limits": {
+    "turns": 12
+  },
+  "answer": {
+    "schema": "canonical",
+    "format": "Call FINAL with exactly this JSON and no prose: {\"book\":{\"qid\":\"Q...\",\"name\":\"...\",\"evidence\":\"...\"},\"series\":{\"qid\":\"Q...\",\"name\":\"...\"},\"institution\":\"...\",\"language\":\"xx\",\"evidence\":\"exact stored description\"}.",
+    "expected": {
+      "book": {
+        "qid": "Q134470527",
+        "name": "Germany and the Middle East: From Kaiser Wilhelm II to Angela Merkel",
+        "evidence": "يعرض الكتاب العلاقة بين ألمانيا والمشرق العربي منذ عهد القيصر فيلهلم الثاني، مرورًا بالحربين العالميتين، وموقفها من قيام إسرائيل وعلاقاتها بالدول العربية وصولًا إلى سياساتها تجاه الشرق الأوسط بعد توحيد الألمانيتين وحتى اليوم."
+      },
+      "series": {
+        "qid": "Q12222327",
+        "name": "ʿĀlam al-maʿrifah"
+      },
+      "institution": "National Council for Culture, Arts and Literature",
+      "language": "ar",
+      "evidence": "سلسلة كتب تصدر عن المجلس الوطني للثقافة والفنون والآداب في الكويت"
+    }
+  },
+  "qids": [
+    "Q801"
+  ]
+}

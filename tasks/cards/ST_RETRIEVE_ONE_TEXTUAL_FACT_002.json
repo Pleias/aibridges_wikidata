@@ -1,0 +1,32 @@
+{
+  "id": "ST_RETRIEVE_ONE_TEXTUAL_FACT_002",
+  "design_card": "ST_RETRIEVE_ONE_TEXTUAL_FACT",
+  "question": "Work only in the provided graph. A historical Bulgarian administrative unit is named Burgas Oblast. Identify the correct entity and give the exact period stated for it, with the original evidence.",
+  "taxonomy": {
+    "category": "cross_lingual",
+    "type": "st_retrieve_one_textual_fact"
+  },
+  "allowed_functions": [
+    "search_entity",
+    "descriptions",
+    "name",
+    "has"
+  ],
+  "limits": {
+    "turns": 8
+  },
+  "answer": {
+    "schema": "canonical",
+    "format": "Call FINAL with exactly this JSON and no prose: {\"entity\":{\"qid\":\"Q...\",\"name\":\"...\"},\"start_year\":N,\"end_year\":N,\"language\":\"xx\",\"evidence\":\"exact stored description\"}.",
+    "expected": {
+      "entity": {
+        "qid": "Q91611321",
+        "name": "Burgas Oblast"
+      },
+      "start_year": 1987,
+      "end_year": 1999,
+      "language": "ru",
+      "evidence": "область Болгарии (1987—1999)"
+    }
+  }
+}

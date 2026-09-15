@@ -1,0 +1,34 @@
+{
+  "id": "ST_RETRIEVE_ONE_TEXTUAL_FACT_001",
+  "design_card": "ST_RETRIEVE_ONE_TEXTUAL_FACT",
+  "question": "Work only in the provided graph. The 2007 Morocco–Spain diplomatic conflict concerned two cities claimed by Morocco. Which cities were they, and what exact evidence records this?",
+  "taxonomy": {
+    "category": "cross_lingual",
+    "type": "st_retrieve_one_textual_fact"
+  },
+  "allowed_functions": [
+    "search_entity",
+    "descriptions",
+    "name",
+    "has"
+  ],
+  "limits": {
+    "turns": 8
+  },
+  "answer": {
+    "schema": "canonical",
+    "format": "Call FINAL with exactly this JSON and no prose: {\"entity\":{\"qid\":\"Q...\",\"name\":\"...\"},\"cities\":[\"...\",\"...\"],\"language\":\"xx\",\"evidence\":\"exact stored description\"}.",
+    "expected": {
+      "entity": {
+        "qid": "Q920449",
+        "name": "2007 Morocco–Spain diplomatic conflict"
+      },
+      "cities": [
+        "Ceuta",
+        "Melilla"
+      ],
+      "language": "ar",
+      "evidence": "صراع كان لفترة وجيزة بين المغرب وإسبانيا بشأن مدينتي سبتة ومليلية اللتان يطالب بهما المغرب"
+    }
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "id": "LT_RETRIEVE_ALL_INTERSECTION_VOLUME_001",
+  "design_card": "LT_RETRIEVE_ALL_INTERSECTION_VOLUME",
+  "question": "Work only in the provided graph. According to the graph's language-used relation, which languages are linked to both Australia and India? Return the complete set and its exact count.",
+  "taxonomy": {
+    "category": "multi_hop",
+    "type": "lt_retrieve_all_intersection_volume"
+  },
+  "allowed_functions": [
+    "search_entity",
+    "search_property",
+    "edges",
+    "name",
+    "has"
+  ],
+  "limits": {
+    "turns": 8
+  },
+  "answer": {
+    "schema": "canonical",
+    "format": "Call FINAL with exactly this JSON and no prose: {\"items\":[{\"qid\":\"Q...\",\"name\":\"...\"}],\"count\":N}. Sort items by numeric QID.",
+    "expected": {
+      "items": [
+        {
+          "qid": "Q150",
+          "name": "French"
+        },
+        {
+          "qid": "Q1568",
+          "name": "Hindi"
+        },
+        {
+          "qid": "Q1617",
+          "name": "Urdu"
+        },
+        {
+          "qid": "Q1860",
+          "name": "English"
+        },
+        {
+          "qid": "Q5137",
+          "name": "Gujarati"
+        },
+        {
+          "qid": "Q5885",
+          "name": "Tamil"
+        },
+        {
+          "qid": "Q9610",
+          "name": "Bangla"
+        },
+        {
+          "qid": "Q36236",
+          "name": "Malayalam"
+        },
+        {
+          "qid": "Q58635",
+          "name": "Punjabi"
+        }
+      ],
+      "count": 9
+    }
+  },
+  "qids": [
+    "Q408",
+    "Q668"
+  ]
+}

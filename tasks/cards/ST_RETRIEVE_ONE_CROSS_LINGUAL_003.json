@@ -1,0 +1,32 @@
+{
+  "id": "ST_RETRIEVE_ONE_CROSS_LINGUAL_003",
+  "design_card": "ST_RETRIEVE_ONE_CROSS_LINGUAL",
+  "question": "Work only in the provided graph. The book Germany and the Middle East: From Kaiser Wilhelm II to Angela Merkel is described as covering a historical span framed by two German leaders. Who are the opening and closing figures? Quote the complete original evidence.",
+  "taxonomy": {
+    "category": "cross_lingual",
+    "type": "st_retrieve_one_cross_lingual"
+  },
+  "allowed_functions": [
+    "search_entity",
+    "descriptions",
+    "name",
+    "has"
+  ],
+  "limits": {
+    "turns": 8
+  },
+  "answer": {
+    "schema": "canonical",
+    "format": "Call FINAL with exactly this JSON and no prose: {\"entity\":{\"qid\":\"Q...\",\"name\":\"...\"},\"opening_figure\":\"...\",\"closing_figure\":\"...\",\"language\":\"xx\",\"evidence\":\"exact stored description\"}.",
+    "expected": {
+      "entity": {
+        "qid": "Q134470527",
+        "name": "Germany and the Middle East: From Kaiser Wilhelm II to Angela Merkel"
+      },
+      "opening_figure": "Kaiser Wilhelm II",
+      "closing_figure": "Angela Merkel",
+      "language": "ar",
+      "evidence": "يعرض الكتاب العلاقة بين ألمانيا والمشرق العربي منذ عهد القيصر فيلهلم الثاني، مرورًا بالحربين العالميتين، وموقفها من قيام إسرائيل وعلاقاتها بالدول العربية وصولًا إلى سياساتها تجاه الشرق الأوسط بعد توحيد الألمانيتين وحتى اليوم."
+    }
+  }
+}

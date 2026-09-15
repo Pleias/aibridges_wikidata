@@ -1,0 +1,39 @@
+{
+  "id": "LT_AGGREGATE_RANK_POOL_VOLUME_001",
+  "design_card": "LT_AGGREGATE_RANK_POOL_VOLUME",
+  "question": "Work only in the provided graph. Among all works recorded as having been filmed in Berlin, which work has the largest number of recorded cast members? Include all ties and the exact maximum.",
+  "taxonomy": {
+    "category": "multi_hop",
+    "type": "lt_aggregate_rank_pool_volume"
+  },
+  "allowed_functions": [
+    "search_entity",
+    "search_property",
+    "edges",
+    "name",
+    "has"
+  ],
+  "limits": {
+    "turns": 10
+  },
+  "answer": {
+    "schema": "canonical",
+    "format": "Call FINAL with exactly this JSON and no prose: {\"reviewed\":N,\"winners\":[{\"qid\":\"Q...\",\"name\":\"...\"}],\"maximum\":N}. Sort winners by numeric QID.",
+    "expected": {
+      "reviewed": 245,
+      "winners": [
+        {
+          "qid": "Q166696",
+          "name": "The Baader Meinhof Complex"
+        }
+      ],
+      "maximum": 114
+    },
+    "bookkeeping": [
+      "reviewed"
+    ]
+  },
+  "qids": [
+    "Q64"
+  ]
+}

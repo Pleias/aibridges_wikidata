@@ -1,0 +1,56 @@
+{
+  "id": "SST_RETRIEVE_ONE_ROLE_GATED_001",
+  "design_card": "SST_RETRIEVE_ONE_ROLE_GATED",
+  "question": "Work only in the provided graph. Among people recorded as employees of PBS, identify the person described simply as a documentary producer. Follow that person's notable work. In which available descriptions is the work attributed to the Coen brothers? Quote every exact matching description.",
+  "taxonomy": {
+    "category": "semantic",
+    "type": "sst_retrieve_one_role_gated"
+  },
+  "allowed_functions": [
+    "search_entity",
+    "search_property",
+    "edges",
+    "descriptions",
+    "name",
+    "has"
+  ],
+  "limits": {
+    "turns": 12
+  },
+  "answer": {
+    "schema": "canonical",
+    "format": "Call FINAL with exactly this JSON and no prose: {\"person\":{\"qid\":\"Q...\",\"name\":\"...\",\"evidence\":\"...\"},\"work\":{\"qid\":\"Q...\",\"name\":\"...\"},\"descriptions\":[{\"language\":\"xx\",\"evidence\":\"...\"}]}. Sort descriptions by language code.",
+    "expected": {
+      "person": {
+        "qid": "Q105305717",
+        "name": "Christopher Buchanan",
+        "evidence": "documentary producer"
+      },
+      "work": {
+        "qid": "Q670439",
+        "name": "Raising Arizona"
+      },
+      "descriptions": [
+        {
+          "language": "ar",
+          "evidence": "فيلم أُصدر سنة 1987، من إخراج الأخوين كوين"
+        },
+        {
+          "language": "de",
+          "evidence": "Film von Ethan und Joel Coen (1987)"
+        },
+        {
+          "language": "en",
+          "evidence": "1987 film by the Coen Brothers"
+        },
+        {
+          "language": "ru",
+          "evidence": "фильм братьев Коэн (1987)"
+        }
+      ]
+    }
+  },
+  "qids": [
+    "Q215616"
+  ]
+}

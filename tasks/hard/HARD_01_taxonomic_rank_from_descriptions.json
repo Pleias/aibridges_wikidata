@@ -1,0 +1,68 @@
+{
+ "id": "HARD_01_taxonomic_rank_from_descriptions",
+ "question": "Work only in the provided graph. For each of these 12 species — Cyperus amplissimus (Q110436129), Dendroctonus keeni (Q124520357), Taraxacum adustum (Q106909877), Eupalea conglomerata (Q21250405), Hydroptila veracruzensis (Q2130324), Nannocampus pictus (Q2042493), Grammia blakei (Q13528628), Oberea rotundipennis (Q14820344), Thrips unispinus (Q113144210), Eutropis cumingi (Q3061174), Mycetophila tuberosa (Q14092167), Saturnus harpe (Q21302876) — follow the parent taxon relation (P171) upwards and report the NEAREST ancestor that is a taxonomic family. This graph does not record taxonomic rank as a property: a taxon's rank is stated only in its free-text description, and those descriptions exist in whichever of the six languages (en, fr, de, zh, ar, ru) happens to carry one — English is not guaranteed. Report exactly one family per species.",
+ "taxonomy": {
+  "category": "multi_hop",
+  "type": "semantic_rank_stop"
+ },
+ "allowed_functions": [
+  "edges",
+  "descriptions",
+  "labels",
+  "name",
+  "has"
+ ],
+ "banned_pids": [
+  "P105"
+ ],
+ "limits": {
+  "turns": 14
+ },
+ "answer": {
+  "schema": "canonical",
+  "format": "Call FINAL with exactly this JSON and no prose: {\"families\":{\"Q<species>\":\"Q<family>\", ...}} with one entry per species.",
+  "expected": {
+   "families": {
+    "Q110436129": "Q155843",
+    "Q124520357": "Q7415384",
+    "Q106909877": "Q25400",
+    "Q21250405": "Q25327",
+    "Q2130324": "Q253573",
+    "Q2042493": "Q213534",
+    "Q13528628": "Q2068481",
+    "Q14820344": "Q205295",
+    "Q113144210": "Q1977089",
+    "Q3061174": "Q272206",
+    "Q14092167": "Q1697984",
+    "Q21302876": "Q232936"
+   }
+  }
+ },
+ "qids": [
+  "Q110436129",
+  "Q124520357",
+  "Q106909877",
+  "Q21250405",
+  "Q2130324",
+  "Q2042493",
+  "Q13528628",
+  "Q14820344",
+  "Q113144210",
+  "Q3061174",
+  "Q14092167",
+  "Q21302876"
+ ],
+ "metrics": {
+  "minimum_reads": 116,
+  "entities_to_inspect": 58
+ },
+ "certificate": {
+  "rank_is_not_a_property": "P105 is banned from the world, so rank is reachable only through description text",
+  "substring_trap": "every chain passes an ancestor described as a 'subfamily', which contains the string 'family'",
+  "cross_lingual": "descriptions are missing in English on some chain members and must be read in another language",
+  "baseline": {
+   "policy": "first ancestor whose English description contains 'family'",
+   "correct": "0/12"
+  }
+ }
+}

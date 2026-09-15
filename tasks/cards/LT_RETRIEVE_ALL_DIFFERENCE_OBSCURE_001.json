@@ -1,0 +1,48 @@
+{
+  "id": "LT_RETRIEVE_ALL_DIFFERENCE_OBSCURE_001",
+  "design_card": "LT_RETRIEVE_ALL_DIFFERENCE_OBSCURE",
+  "question": "Work only in the provided graph. According to the has-parts relation, which entries belong to Top 2000 – 2018 but not to Top 2000 – 2020? Return the complete set and exact count.",
+  "taxonomy": {
+    "category": "multi_hop",
+    "type": "lt_retrieve_all_difference_obscure"
+  },
+  "allowed_functions": [
+    "search_entity",
+    "search_property",
+    "edges",
+    "name",
+    "has"
+  ],
+  "limits": {
+    "turns": 8
+  },
+  "answer": {
+    "schema": "canonical",
+    "format": "Call FINAL with exactly this JSON and no prose: {\"items\":[{\"qid\":\"Q...\",\"name\":\"...\"}],\"count\":N}. Sort items by numeric QID.",
+    "expected": {
+      "items": [
+        {
+          "qid": "Q611319",
+          "name": "Living Doll"
+        },
+        {
+          "qid": "Q1970769",
+          "name": "Elevation"
+        },
+        {
+          "qid": "Q3774063",
+          "name": "Grace"
+        },
+        {
+          "qid": "Q53834071",
+          "name": "Waarom nou jij"
+        }
+      ],
+      "count": 4
+    }
+  },
+  "qids": [
+    "Q107726774",
+    "Q107727045"
+  ]
+}

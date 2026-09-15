@@ -1,0 +1,49 @@
+{
+  "id": "PST_RETRIEVE_ALL_INTERSECTION_FILTER_001",
+  "design_card": "PST_RETRIEVE_ALL_INTERSECTION_FILTER",
+  "question": "Work only in the provided graph. Among all works recorded as having been filmed in both New York City and London, which are explicitly described as documentaries? Return the complete set, the exact evidence for every inclusion, and the number of intersection candidates reviewed.",
+  "taxonomy": {
+    "category": "semantic",
+    "type": "pst_retrieve_all_intersection_filter"
+  },
+  "allowed_functions": [
+    "search_entity",
+    "search_property",
+    "edges",
+    "descriptions",
+    "name",
+    "has"
+  ],
+  "limits": {
+    "turns": 12
+  },
+  "answer": {
+    "schema": "canonical",
+    "format": "Call FINAL with exactly this JSON and no prose: {\"reviewed\":N,\"matches\":[{\"qid\":\"Q...\",\"name\":\"...\",\"language\":\"xx\",\"evidence\":\"exact stored description\"}],\"count\":N}. Sort matches by numeric QID.",
+    "expected": {
+      "reviewed": 29,
+      "matches": [
+        {
+          "qid": "Q4595879",
+          "name": "One Direction: This Is Us",
+          "language": "ru",
+          "evidence": "документальный фильм о группе One Direction"
+        },
+        {
+          "qid": "Q113502443",
+          "name": "Brian Clarke: The Story So Far (1979)",
+          "language": "en",
+          "evidence": "1979 BBC One TV documentary film directed by Diana Lashmore for Omnibus"
+        }
+      ],
+      "count": 2
+    },
+    "bookkeeping": [
+      "reviewed"
+    ]
+  },
+  "qids": [
+    "Q60",
+    "Q84"
+  ]
+}

@@ -1,0 +1,52 @@
+{
+ "id": "HARD_03_certified_kinship_absence",
+ "question": "Work only in the provided graph. Two people share the name 'Gerhard Schröder':\n  X = Q2530\n  Y = Q60781\nDetermine whether X and Y are connected by FAMILY: a path in which EVERY hop uses one of the kinship properties P22 (father), P25 (mother), P26 (spouse), P40 (child), P3373 (sibling), in either direction. Sharing a name is not evidence of family, and edges() shows every property, not only these five — filtering is your job. A claim that no such path exists is only credible if you have exhausted the search, so report every entity in X's kinship component, X included.",
+ "taxonomy": {
+  "category": "multi_hop",
+  "type": "certified_absence"
+ },
+ "allowed_functions": [
+  "edges",
+  "name",
+  "has",
+  "labels"
+ ],
+ "limits": {
+  "turns": 14
+ },
+ "answer": {
+  "schema": "canonical",
+  "format": "Call FINAL with exactly this JSON and no prose: {\"connected\":true|false,\"x_component\":[\"Q...\", ...]} where x_component lists every entity reachable from X through kinship properties, X included.",
+  "expected": {
+   "connected": false,
+   "x_component": [
+    "Q114302589",
+    "Q122315",
+    "Q1618950",
+    "Q21885991",
+    "Q21885996",
+    "Q2530",
+    "Q40531172",
+    "Q40560902",
+    "Q72617"
+   ]
+  }
+ },
+ "qids": [
+  "Q2530",
+  "Q60781"
+ ],
+ "metrics": {
+  "minimum_reads": 10,
+  "component_size": 9
+ },
+ "certificate": {
+  "true_absence": "X's kinship component closes at 9 members without Y; Y's own component has 3 and the two are disjoint",
+  "temptation": "X and Y are joined by a DIRECT edge ['P1889'] that is not a kinship property — every pathfinder returns it in one hop",
+  "proof_obligation": "the answer is scored on the component, so a correct 'no' reached by stopping early fails",
+  "baseline": {
+   "policy": "shortest path over all properties",
+   "correct": "returns the 1-hop non-kinship edge — a confident false positive"
+  }
+ }
+}

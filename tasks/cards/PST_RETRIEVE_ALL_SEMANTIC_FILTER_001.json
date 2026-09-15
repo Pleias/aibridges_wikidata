@@ -1,0 +1,105 @@
+{
+  "id": "PST_RETRIEVE_ALL_SEMANTIC_FILTER_001",
+  "question": "Work only in the provided graph. Among people directly recorded as employees of the international organization Amnesty International, excluding its national sections, who is described as combining literary or artistic work with activism, human-rights advocacy, or dissidence? Return the complete set, not a sample, and every exact description that supports each inclusion.",
+  "taxonomy": {
+    "category": "semantic",
+    "type": "pst_retrieve_all_semantic_filter"
+  },
+  "allowed_functions": [
+    "search_entity",
+    "search_property",
+    "edges",
+    "descriptions",
+    "labels",
+    "name",
+    "has"
+  ],
+  "limits": {
+    "turns": 15
+  },
+  "answer": {
+    "schema": "canonical",
+    "format": "Call FINAL with exactly this JSON and no prose: {\"institution\":\"Q...\",\"reviewed\":N,\"matches\":[{\"qid\":\"Q...\",\"evidence\":[{\"lang\":\"xx\",\"text\":\"exact stored description\"}]}]}",
+    "expected": {
+      "institution": "Q42970",
+      "reviewed": 114,
+      "matches": [
+        {
+          "qid": "Q257835",
+          "evidence": [
+            {
+              "lang": "de",
+              "text": "bangladeschische Juristin, Menschenrechtsaktivistin und Autorin"
+            }
+          ]
+        },
+        {
+          "qid": "Q704051",
+          "evidence": [
+            {
+              "lang": "ru",
+              "text": "тайваньский писатель, журналист, переводчик, диссидент, историк"
+            }
+          ]
+        },
+        {
+          "qid": "Q3086711",
+          "evidence": [
+            {
+              "lang": "de",
+              "text": "algerischer Autor, Lehrer und Menschenrechtsaktivist"
+            }
+          ]
+        },
+        {
+          "qid": "Q5565037",
+          "evidence": [
+            {
+              "lang": "en",
+              "text": "Indian writer and activist"
+            }
+          ]
+        },
+        {
+          "qid": "Q15149893",
+          "evidence": [
+            {
+              "lang": "en",
+              "text": "Swedish Human rights activist, blogger and book author"
+            },
+            {
+              "lang": "de",
+              "text": "schwedischer Menschenrechtsaktivist, Blogger und Buchautor"
+            }
+          ]
+        },
+        {
+          "qid": "Q34028712",
+          "evidence": [
+            {
+              "lang": "en",
+              "text": "German writer and human rights activist"
+            },
+            {
+              "lang": "de",
+              "text": "deutscher Schriftsteller und Menschenrechtsaktivist"
+            }
+          ]
+        },
+        {
+          "qid": "Q65165620",
+          "evidence": [
+            {
+              "lang": "de",
+              "text": "brasilianische Ärztin, Autorin und Menschenrechtsaktivistin"
+            }
+          ]
+        }
+      ]
+    },
+    "bookkeeping": [
+      "reviewed"
+    ]
+  },
+  "design_card": "PST_RETRIEVE_ALL_SEMANTIC_FILTER"
+}

@@ -1,0 +1,49 @@
+{
+  "id": "SST_RETRIEVE_ONE_ROLE_GATED_004",
+  "design_card": "SST_RETRIEVE_ONE_ROLE_GATED",
+  "question": "Work only in the provided graph. Among people whose recorded place of death is Iraq, identify the British lieutenant born in Baghdad whose description says he received the Victoria Cross. Follow the award link. How is that decoration characterized in its Arabic and Russian descriptions? Quote both exactly.",
+  "taxonomy": {
+    "category": "cross_lingual",
+    "type": "sst_retrieve_one_role_gated"
+  },
+  "allowed_functions": [
+    "search_entity",
+    "search_property",
+    "edges",
+    "descriptions",
+    "name",
+    "has"
+  ],
+  "limits": {
+    "turns": 12
+  },
+  "answer": {
+    "schema": "canonical",
+    "format": "Call FINAL with exactly this JSON and no prose: {\"person\":{\"qid\":\"Q...\",\"name\":\"...\",\"language\":\"xx\",\"evidence\":\"...\"},\"award\":{\"qid\":\"Q...\",\"name\":\"...\"},\"descriptions\":[{\"language\":\"ar\",\"evidence\":\"...\"},{\"language\":\"ru\",\"evidence\":\"...\"}]}.",
+    "expected": {
+      "person": {
+        "qid": "Q5078922",
+        "name": "Charles Henry Cowley",
+        "language": "ar",
+        "evidence": "ضابط بريطاني برتبة ملازم، ولد في بغداد وكان ضمن تشكيلات البحرية الملكية البريطانية للمتطوعين الاحتياط، وحاصل على وسام صليب الملكة فيكتوريا"
+      },
+      "award": {
+        "qid": "Q219578",
+        "name": "Victoria Cross"
+      },
+      "descriptions": [
+        {
+          "language": "ar",
+          "evidence": "أعلى وسام عسكري بريطاني"
+        },
+        {
+          "language": "ru",
+          "evidence": "высшая военная награда Великобритании и ряда стран Содружества наций"
+        }
+      ]
+    }
+  },
+  "qids": [
+    "Q796"
+  ]
+}

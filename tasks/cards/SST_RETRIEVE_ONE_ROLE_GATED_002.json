@@ -1,0 +1,41 @@
+{
+  "id": "SST_RETRIEVE_ONE_ROLE_GATED_002",
+  "design_card": "SST_RETRIEVE_ONE_ROLE_GATED",
+  "question": "Work only in the provided graph. Among people recorded as employees of Amnesty International, identify the person described as a Taiwanese writer, journalist, translator, dissident, and historian. Follow that person's notable work. Which available description states what the work is about? Return its language and quote the exact original evidence.",
+  "taxonomy": {
+    "category": "semantic",
+    "type": "sst_retrieve_one_role_gated"
+  },
+  "allowed_functions": [
+    "search_entity",
+    "search_property",
+    "edges",
+    "descriptions",
+    "name",
+    "has"
+  ],
+  "limits": {
+    "turns": 12
+  },
+  "answer": {
+    "schema": "canonical",
+    "format": "Call FINAL with exactly this JSON and no prose: {\"person\":{\"qid\":\"Q...\",\"name\":\"...\",\"language\":\"xx\",\"evidence\":\"...\"},\"work\":{\"qid\":\"Q...\",\"name\":\"...\"},\"subject_language\":\"xx\",\"subject_evidence\":\"exact stored description\"}.",
+    "expected": {
+      "person": {
+        "qid": "Q704051",
+        "name": "Bo Yang",
+        "language": "ru",
+        "evidence": "тайваньский писатель, журналист, переводчик, диссидент, историк"
+      },
+      "work": {
+        "qid": "Q6112954",
+        "name": "The Ugly Chinese"
+      },
+      "subject_language": "fr",
+      "subject_evidence": "livre de Bo Yang, sur les descriptions des chinois dans la littérature"
+    }
+  },
+  "qids": [
+    "Q42970"
+  ]
+}

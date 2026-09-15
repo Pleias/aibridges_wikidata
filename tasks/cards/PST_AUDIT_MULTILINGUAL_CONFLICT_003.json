@@ -1,0 +1,117 @@
+{
+  "id": "PST_AUDIT_MULTILINGUAL_CONFLICT_003",
+  "design_card": "PST_AUDIT_MULTILINGUAL_CONFLICT",
+  "question": "Work only in the provided graph. Audit every work recorded in the Toledo Museum of Art collection. Which works have descriptions that directly attribute the work to a named individual in one language while calling its maker anonymous or unknown in another? Do not count descriptions that merely say ‘after’, ‘copy after’, ‘school of’, or give only a nationality. Return the complete anomaly set and the exact conflicting descriptions.",
+  "taxonomy": {
+    "category": "audit",
+    "type": "pst_audit_multilingual_conflict"
+  },
+  "allowed_functions": [
+    "search_entity",
+    "search_property",
+    "edges",
+    "backlinks",
+    "descriptions",
+    "name",
+    "has"
+  ],
+  "limits": {
+    "turns": 12
+  },
+  "answer": {
+    "schema": "canonical",
+    "format": "Call FINAL with exactly this JSON and no prose: {\"pool_size\":0,\"count\":0,\"entities\":[{\"qid\":\"Q...\",\"name\":\"...\",\"descriptions\":[{\"language\":\"xx\",\"evidence\":\"exact stored description\"}]}]} with entities sorted by numeric QID and descriptions in en, fr, de, zh, ar, ru order.",
+    "expected": {
+      "pool_size": 804,
+      "count": 4,
+      "entities": [
+        {
+          "qid": "Q24273194",
+          "name": "Man with a Wine Glass",
+          "descriptions": [
+            {
+              "language": "en",
+              "evidence": "painting by Diego Velázquez"
+            },
+            {
+              "language": "fr",
+              "evidence": "peinture anonyme d'après Diego Vélasquez"
+            },
+            {
+              "language": "de",
+              "evidence": "Gemälde von Anonymus"
+            },
+            {
+              "language": "ar",
+              "evidence": "لوحة فنية بواسطة دييغو فيلاثكيث"
+            }
+          ]
+        },
+        {
+          "qid": "Q28810781",
+          "name": "Winter Landscape",
+          "descriptions": [
+            {
+              "language": "en",
+              "evidence": "painting by anonymous artist (Toledo Museum of Art)"
+            },
+            {
+              "language": "fr",
+              "evidence": "peinture de Guo Xi"
+            },
+            {
+              "language": "de",
+              "evidence": "Gemälde von Anonymus"
+            }
+          ]
+        },
+        {
+          "qid": "Q78646036",
+          "name": "Untitled",
+          "descriptions": [
+            {
+              "language": "en",
+              "evidence": "painting by Lee Mullican (Toledo 2018.28)"
+            },
+            {
+              "language": "fr",
+              "evidence": "peinture de Lee Mullican (Toledo 2018.28)"
+            },
+            {
+              "language": "de",
+              "evidence": "Gemälde von Lee Mullican (Toledo 2018.28)"
+            },
+            {
+              "language": "ar",
+              "evidence": "لوحة فنية بواسطة شخص مجهول"
+            }
+          ]
+        },
+        {
+          "qid": "Q78697297",
+          "name": "Grape-vine",
+          "descriptions": [
+            {
+              "language": "fr",
+              "evidence": "peinture de Jih-kuan Wen"
+            },
+            {
+              "language": "de",
+              "evidence": "Gemälde von Jih-kuan Wen"
+            },
+            {
+              "language": "ar",
+              "evidence": "لوحة فنية بواسطة شخص مجهول"
+            }
+          ]
+        }
+      ]
+    },
+    "bookkeeping": [
+      "pool_size"
+    ]
+  },
+  "qids": [
+    "Q1743116"
+  ]
+}

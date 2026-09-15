@@ -1,0 +1,79 @@
+{
+  "id": "PST_RETRIEVE_ALL_SEMANTIC_FILTER_005",
+  "design_card": "PST_RETRIEVE_ALL_SEMANTIC_FILTER",
+  "question": "Work only in the provided graph. Among every person or group recorded as having works in the National Gallery of Australia collection, find all whose Chinese, Arabic, or Russian descriptions explicitly identify them as Indigenous or Aboriginal Australian artists. Return the complete set, not a sample, and quote every matching rare-language description.",
+  "taxonomy": {
+    "category": "cross_lingual",
+    "type": "pst_retrieve_all_semantic_filter"
+  },
+  "allowed_functions": [
+    "search_entity",
+    "search_property",
+    "edges",
+    "backlinks",
+    "descriptions",
+    "name",
+    "has"
+  ],
+  "limits": {
+    "turns": 12
+  },
+  "answer": {
+    "schema": "canonical",
+    "format": "Call FINAL with exactly this JSON and no prose: {\"pool_size\":0,\"count\":0,\"entities\":[{\"qid\":\"Q...\",\"name\":\"...\",\"language\":\"xx\",\"evidence\":\"exact stored description\"}]} with entities sorted by numeric QID.",
+    "expected": {
+      "pool_size": 1147,
+      "count": 7,
+      "entities": [
+        {
+          "qid": "Q453890",
+          "name": "Emily Kngwarreye",
+          "language": "ru",
+          "evidence": "австралийская художница, представительница традиционного первичного (коренного) искусства"
+        },
+        {
+          "qid": "Q21550181",
+          "name": "Walangkura Napanangka",
+          "language": "ar",
+          "evidence": "فنانة سكان أصليون أسترالية"
+        },
+        {
+          "qid": "Q85809857",
+          "name": "Tjanpi Desert Weavers",
+          "language": "zh",
+          "evidence": "澳洲原住民紡織群體"
+        },
+        {
+          "qid": "Q86742272",
+          "name": "Jimmy Njiminjuma",
+          "language": "ru",
+          "evidence": "аборигенный австралийский художник"
+        },
+        {
+          "qid": "Q86742669",
+          "name": "Gali Yalkarriwuy Gurruwiwi",
+          "language": "ar",
+          "evidence": "فنان سكان أصليون أسترالي"
+        },
+        {
+          "qid": "Q98237409",
+          "name": "Valerie MacSween",
+          "language": "ar",
+          "evidence": "فنانة سكان أصليون أسترالية"
+        },
+        {
+          "qid": "Q98983085",
+          "name": "Yala Yala Gibbs Tjungurrayi",
+          "language": "ar",
+          "evidence": "فنان سكان أصليون أسترالي"
+        }
+      ]
+    },
+    "bookkeeping": [
+      "pool_size"
+    ]
+  },
+  "qids": [
+    "Q795228"
+  ]
+}
